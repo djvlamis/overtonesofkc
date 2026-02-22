@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Overtones of Kansas City - Big Band Dance Music</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">The Overtones</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="members.html">Members</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>The Overtones of Kansas City</h1>
+            <p class="tagline">Swing, Dance & Big Band Music Since 1997</p>
+            <a href="#contact" class="cta-button">Book Us For Your Event</a>
+        </div>
+    </section>
+
+    <section class="section about" id="about">
+        <h2>Make Your Next Event SWING</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>The Overtones showcase a broad range of the most popular big band dance music from Glenn Miller and Contemporary, with stops at Broadway, Las Vegas and the Tonight Show.</p>
+                
+                <p>Since 1997, The Overtones of Kansas City have been playing the best known big band standards and top contemporary music. Big bands are back and we are ready to entertain you with music that is begging to be danced to.</p>
+                
+                <p>We've performed for weddings, anniversaries, city festivals, corporate dinners, fund raisers and veteran appreciation events. We can tailor your performance to the dancer in all of us or to the sentimentalist who just wants to bring back memories of a simpler time.</p>
+                
+                <p><strong>Regardless of your age or musical tastes, if you like Big Band at all you will LOVE the OVERTONES!</strong></p>
+            </div>
+            <div class="about-image">
+                <img src="images/band-photo.jpg" alt="The Overtones performing" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="placeholder-image" style="display:none;">[Add Band Photo Here]</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gigs" id="calendar">
+        <h2>Upcoming Performances</h2>
+        <p class="section-intro">Come swing with us at our next event!</p>
+        
+        <!-- INTEGRATION NOTE: Google Calendar Embed -->
+        <!-- Replace the calendar ID below with overtonesofkc@gmail.com -->
+        <div class="calendar-container">
+            <iframe src="https://calendar.google.com/calendar/embed?src=overtonesofkc%40gmail.com&ctz=America%2FChicago" 
+                    style="border: 0" 
+                    width="100%" 
+                    height="600" 
+                    frameborder="0" 
+                    scrolling="no">
+            </iframe>
+        </div>
+        
+        <!-- Alternative: Manual gig list if calendar embed doesn't work -->
+        <div class="gig-list" style="display:none;">
+            <div class="gig-card">
+                <div class="gig-date">Saturday, February 15, 2026 • 7:00 PM</div>
+                <div class="gig-venue">Riverstone Retirement Community</div>
+                <div class="gig-location">Kansas City, MO</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features">
+        <h2>What We Offer</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎵</div>
+                <h3>180+ Songs</h3>
+                <p>From Glenn Miller classics to contemporary favorites, we have a song for every occasion and taste.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎺</div>
+                <h3>Full Big Band</h3>
+                <p>16-piece ensemble featuring saxes, trumpets, trombones, and a swinging rhythm section.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💃</div>
+                <h3>Dance Music</h3>
+                <p>Music that gets people on their feet and creates unforgettable memories on the dance floor.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎉</div>
+                <h3>Any Event</h3>
+                <p>Weddings, corporate events, festivals, fundraisers - we make every occasion special.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Overtones of KC</h3>
+                <p>Kansas City's Premier Big Band</p>
+                <p>Playing swing and dance music since 1997</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="members.html">Band Members</a>
+                <a href="music.html">Music Repertoire</a>
+                <a href="#calendar">Calendar</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: overtonesofkc@gmail.com</p>
+                <p><a href="https://facebook.com/OvertonesofKC" target="_blank">Follow us on Facebook</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Overtones of Kansas City. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
