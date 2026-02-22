@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Repertoire - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* MUSIC PAGE SPECIFIC STYLES */
+        .music-controls {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .control-group label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #666;
+        }
+
+        .control-group input,
+        .control-group select {
+            padding: 0.6rem 0.9rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #fafafa;
+            transition: border-color 0.2s;
+            color: #333;
+        }
+
+        .control-group input:focus,
+        .control-group select:focus {
+            outline: none;
+            border-color: #d4af37;
+            background: white;
+        }
+
+        .control-group.search-group {
+            flex: 2;
+            min-width: 220px;
+        }
+
+        .clear-btn {
+            padding: 0.6rem 1.2rem;
+            background: #f0f0f0;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            cursor: pointer;
+            color: #555;
+            transition: all 0.2s;
+            white-space: nowrap;
+            align-self: flex-end;
+        }
+
+        .clear-btn:hover {
+            background: #e0e0e0;
+            border-color: #ccc;
+        }
+
+        .results-summary {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .results-count {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .sort-inline {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .sort-inline select {
+            padding: 0.3rem 0.6rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-family: inherit;
+            color: #333;
+            cursor: pointer;
+        }
+
+        /* SONG TABLE */
+        .song-table-wrapper {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .song-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .song-table thead {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+
+        .song-table th {
+            padding: 1rem 1.2rem;
+            text-align: left;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .song-table th.sortable {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .song-table th.sortable:hover {
+            color: #d4af37;
+        }
+
+        .sort-indicator {
+            display: inline-block;
+            margin-left: 0.3rem;
+            opacity: 0.5;
+        }
+
+        .sort-indicator.active {
+            opacity: 1;
+            color: #d4af37;
+        }
+
+        .song-table tbody tr {
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.15s;
+        }
+
+        .song-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .song-table tbody tr:hover {
+            background: #fdf9ee;
+        }
+
+        .song-table td {
+            padding: 0.85rem 1.2rem;
+            vertical-align: middle;
+        }
+
+        .song-title {
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+
+        .song-artist {
+            color: #555;
+        }
+
+        .song-year {
+            color: #888;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .song-genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+
+        .genre-tag {
+            background: #f0f0f0;
+            color: #555;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .vocal-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .vocal-badge.vocal {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .vocal-badge.instrumental {
+            background: #e0f2fe;
+            color: #0c4a6e;
+        }
+
+        /* NO RESULTS */
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #888;
+        }
+
+        .no-results p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ACTIVE FILTERS DISPLAY */
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #1a1a2e;
+            color: white;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 20px;
+        }
+
+        .filter-chip button {
+            background: none;
+            border: none;
+            color: #d4af37;
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1;
+            padding: 0;
+        }
+
+        /* CTA BANNER */
+        .music-cta {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .music-cta h2 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .music-cta p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .music-controls {
+                flex-direction: column;
+            }
+
+            .control-group,
+            .control-group.search-group {
+                min-width: 0;
+                width: 100%;
+            }
+
+            /* Hide genre column and year on small screens */
+            .col-genres,
+            .col-year {
+                display: none;
+            }
+
+            .song-table th,
+            .song-table td {
+                padding: 0.75rem 0.8rem;
+            }
+
+            .results-summary {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">The Overtones of KC</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="musicians.html">Musicians</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="index.html#calendar">Calendar</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Music Repertoire</h1>
+        <p>Over 180 songs spanning jazz, swing, pop, rock, and more</p>
+    </div>
+
+    <div class="container">
+
+        <!-- FILTER CONTROLS -->
+        <div class="music-controls">
+            <div class="control-group search-group">
+                <label for="searchInput">Search</label>
+                <input type="search" id="searchInput" placeholder="Song title or artist..." autocomplete="off">
+            </div>
+
+            <div class="control-group">
+                <label for="genreFilter">Genre</label>
+                <select id="genreFilter">
+                    <option value="">All Genres</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="vocalFilter">Type</label>
+                <select id="vocalFilter">
+                    <option value="">All Songs</option>
+                    <option value="vocal">Vocal</option>
+                    <option value="instrumental">Instrumental</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="eraFilter">Era</label>
+                <select id="eraFilter">
+                    <option value="">All Eras</option>
+                    <option value="pre-1940">Pre-1940</option>
+                    <option value="1940s">1940s</option>
+                    <option value="1950s">1950s</option>
+                    <option value="1960s">1960s</option>
+                    <option value="1970s">1970s</option>
+                    <option value="1980s">1980s</option>
+                    <option value="1990s+">1990s & Later</option>
+                </select>
+            </div>
+
+            <button class="clear-btn" id="clearBtn" onclick="clearFilters()">Clear Filters</button>
+        </div>
+
+        <!-- ACTIVE FILTER CHIPS -->
+        <div class="active-filters" id="activeFilters"></div>
+
+        <!-- RESULTS SUMMARY + SORT -->
+        <div class="results-summary">
+            <span><span class="results-count" id="resultsCount">0</span> songs</span>
+            <div class="sort-inline">
+                Sort by:
+                <select id="sortSelect" onchange="renderTable()">
+                    <option value="title">Title (A–Z)</option>
+                    <option value="title-desc">Title (Z–A)</option>
+                    <option value="artist">Artist</option>
+                    <option value="year">Year (oldest first)</option>
+                    <option value="year-desc">Year (newest first)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- SONG TABLE -->
+        <div class="song-table-wrapper">
+            <table class="song-table" id="songTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th class="col-year">Year</th>
+                        <th>Type</th>
+                        <th class="col-genres">Genres</th>
+                    </tr>
+                </thead>
+                <tbody id="songTableBody">
+                </tbody>
+            </table>
+            <div class="no-results" id="noResults" style="display:none;">
+                <p>No songs match your filters.</p>
+                <p style="font-size:0.95rem;">Try broadening your search or <a href="#" onclick="clearFilters(); return false;" style="color:#d4af37;">clearing the filters</a>.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="music-cta">
+            <h2>Book Us to Hear These Live!</h2>
+            <p>Want to dance to your favorites? Hire The Overtones of KC for your next event.</p>
+            <a href="index.html#contact" class="cta-button">Get In Touch</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Overtones of KC</h3>
+                <p>Kansas City's Premier Big Band</p>
+                <p>Playing swing and dance music since 1997</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="musicians.html">Musicians</a>
+                <a href="music.html">Music Repertoire</a>
+                <a href="index.html#calendar">Calendar</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: overtonesofkc@gmail.com</p>
+                <p><a href="https://facebook.com/OvertonesofKC" target="_blank">Follow us on Facebook</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Overtones of Kansas City. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let allSongs = [];
+        let filteredSongs = [];
+
+        // Load songs from JSON
+        fetch('overtones_library.json')
+            .then(r => r.json())
+            .then(data => {
+                allSongs = data;
+                buildGenreFilter();
+                applyFilters();
+            })
+            .catch(() => {
+                document.getElementById('noResults').style.display = 'block';
+                document.getElementById('noResults').innerHTML = '<p>Could not load song data.</p>';
+            });
+
+        function buildGenreFilter() {
+            const genres = new Set();
+            allSongs.forEach(s => (s.genres || []).forEach(g => genres.add(g)));
+            const sorted = Array.from(genres).sort();
+            const sel = document.getElementById('genreFilter');
+            sorted.forEach(g => {
+                const opt = document.createElement('option');
+                opt.value = g;
+                opt.textContent = g;
+                sel.appendChild(opt);
+            });
+        }
+
+        function getEraRange(era) {
+            switch (era) {
+                case 'pre-1940': return [null, 1939];
+                case '1940s':    return [1940, 1949];
+                case '1950s':    return [1950, 1959];
+                case '1960s':    return [1960, 1969];
+                case '1970s':    return [1970, 1979];
+                case '1980s':    return [1980, 1989];
+                case '1990s+':   return [1990, null];
+                default:         return [null, null];
+            }
+        }
+
+        function applyFilters() {
+            const search = document.getElementById('searchInput').value.toLowerCase().trim();
+            const genre  = document.getElementById('genreFilter').value;
+            const vocal  = document.getElementById('vocalFilter').value;
+            const era    = document.getElementById('eraFilter').value;
+            const [eraMin, eraMax] = getEraRange(era);
+
+            filteredSongs = allSongs.filter(s => {
+                if (search) {
+                    const haystack = ((s.title || '') + ' ' + (s.artist || '')).toLowerCase();
+                    if (!haystack.includes(search)) return false;
+                }
+                if (genre && !(s.genres || []).includes(genre)) return false;
+                if (vocal === 'vocal' && !s.vocal) return false;
+                if (vocal === 'instrumental' && s.vocal) return false;
+                if (eraMin !== null && (s.year === null || s.year < eraMin)) return false;
+                if (eraMax !== null && (s.year === null || s.year > eraMax)) return false;
+                return true;
+            });
+
+            renderActiveFilters(search, genre, vocal, era);
+            renderTable();
+        }
+
+        function renderTable() {
+            const sort = document.getElementById('sortSelect').value;
+            const sorted = [...filteredSongs].sort((a, b) => {
+                switch (sort) {
+                    case 'title':      return (a.title || '').localeCompare(b.title || '');
+                    case 'title-desc': return (b.title || '').localeCompare(a.title || '');
+                    case 'artist':     return (a.artist || 'zzz').localeCompare(b.artist || 'zzz');
+                    case 'year':       return (a.year || 9999) - (b.year || 9999);
+                    case 'year-desc':  return (b.year || 0) - (a.year || 0);
+                    default:           return 0;
+                }
+            });
+
+            const tbody = document.getElementById('songTableBody');
+            const noResults = document.getElementById('noResults');
+
+            if (sorted.length === 0) {
+                tbody.innerHTML = '';
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+                tbody.innerHTML = sorted.map(s => `
+                    <tr>
+                        <td class="song-title">${escHtml(s.title || '')}</td>
+                        <td class="song-artist">${escHtml(s.artist || '—')}</td>
+                        <td class="song-year col-year">${s.year || '—'}</td>
+                        <td>
+                            <span class="vocal-badge ${s.vocal ? 'vocal' : 'instrumental'}">
+                                ${s.vocal ? '🎤 Vocal' : '🎵 Instrumental'}
+                            </span>
+                        </td>
+                        <td class="col-genres">
+                            <div class="song-genres">
+                                ${(s.genres || []).map(g => `<span class="genre-tag">${escHtml(g)}</span>`).join('')}
+                            </div>
+                        </td>
+                    </tr>
+                `).join('');
+            }
+
+            document.getElementById('resultsCount').textContent = sorted.length;
+        }
+
+        function renderActiveFilters(search, genre, vocal, era) {
+            const container = document.getElementById('activeFilters');
+            container.innerHTML = '';
+            if (search) addChip(container, `"${search}"`, () => { document.getElementById('searchInput').value = ''; applyFilters(); });
+            if (genre)  addChip(container, genre, () => { document.getElementById('genreFilter').value = ''; applyFilters(); });
+            if (vocal)  addChip(container, vocal === 'vocal' ? 'Vocal' : 'Instrumental', () => { document.getElementById('vocalFilter').value = ''; applyFilters(); });
+            if (era)    addChip(container, era, () => { document.getElementById('eraFilter').value = ''; applyFilters(); });
+        }
+
+        function addChip(container, label, onRemove) {
+            const chip = document.createElement('span');
+            chip.className = 'filter-chip';
+            chip.innerHTML = `${escHtml(label)} <button title="Remove filter">&times;</button>`;
+            chip.querySelector('button').addEventListener('click', onRemove);
+            container.appendChild(chip);
+        }
+
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('genreFilter').value = '';
+            document.getElementById('vocalFilter').value = '';
+            document.getElementById('eraFilter').value = '';
+            applyFilters();
+        }
+
+        function escHtml(str) {
+            return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+
+        // Wire up filter inputs
+        ['searchInput','genreFilter','vocalFilter','eraFilter'].forEach(id => {
+            document.getElementById(id).addEventListener('input', applyFilters);
+            document.getElementById(id).addEventListener('change', applyFilters);
+        });
+
+        // Mobile nav toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .error-page {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .error-content {
+            max-width: 560px;
+        }
+
+        .error-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-code {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #d4af37;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-title {
+            font-size: 1.8rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .error-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .error-links a.cta-button {
+            background: #d4af37;
+            color: #1a1a2e;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .error-links a.cta-button:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+        }
+
+        .error-links a.secondary-link {
+            color: #1a1a2e;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #1a1a2e;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .error-links a.secondary-link:hover {
+            background: #1a1a2e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">The Overtones of KC</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="musicians.html">Musicians</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="index.html#calendar">Calendar</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="error-page">
+        <div class="error-content">
+            <div class="error-icon">🎺</div>
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-message">
+                Looks like this page went off-script! The page you're looking for doesn't exist
+                or may have moved. Let's get you back to the music.
+            </p>
+            <div class="error-links">
+                <a href="index.html" class="cta-button">Back to Home</a>
+                <a href="music.html" class="secondary-link">Browse Our Music</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>The Overtones of KC</h3>
+                <p>Kansas City's Premier Big Band</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="musicians.html">Musicians</a>
+                <a href="music.html">Music Repertoire</a>
+                <a href="index.html#calendar">Calendar</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: overtonesofkc@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Overtones of Kansas City. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

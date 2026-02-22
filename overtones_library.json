@@ -1,0 +1,1276 @@
+[
+  {
+    "title": "25 Or 6 To 4",
+    "artist": "Chicago",
+    "year": 1970,
+    "vocal": false,
+    "genres": ["Classic Rock", "Jazz-Rock"]
+  },
+  {
+    "title": "ABBA Medley",
+    "artist": "ABBA",
+    "year": null,
+    "vocal": false,
+    "genres": ["Pop", "Disco & Dance"]
+  },
+  {
+    "title": "Achy Breaky Heart",
+    "artist": "Billy Ray Cyrus",
+    "year": 1993,
+    "vocal": false,
+    "genres": ["Country"]
+  },
+  {
+    "title": "Addams Family (Theme From)",
+    "artist": "TV Theme",
+    "year": null,
+    "vocal": false,
+    "genres": ["Film & TV", "Novelty"]
+  },
+  {
+    "title": "Ain't She Sweet",
+    "artist": "Gene Austin",
+    "year": 1927,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "Ain't That A Kick In The Head",
+    "artist": "Dean Martin",
+    "year": 1960,
+    "vocal": true,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "All Blues",
+    "artist": "Miles Davis",
+    "year": 1959,
+    "vocal": false,
+    "genres": ["Jazz", "Blues"]
+  },
+  {
+    "title": "Allegheny Moon",
+    "artist": "Patti Page",
+    "year": 1956,
+    "vocal": false,
+    "genres": ["Pop", "Country"]
+  },
+  {
+    "title": "Alley Cat",
+    "artist": "Bent Fabric / Frank Björn",
+    "year": 1962,
+    "vocal": false,
+    "genres": ["Jazz", "Novelty"]
+  },
+  {
+    "title": "Almost Like Being In Love",
+    "artist": "Lerner & Loewe",
+    "year": 1947,
+    "vocal": true,
+    "genres": ["Broadway & Musical", "Jazz"]
+  },
+  {
+    "title": "American Patrol",
+    "artist": "Glenn Miller",
+    "year": 1885,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Traditional & Patriotic", "March"]
+  },
+  {
+    "title": "And All That Jazz",
+    "artist": "Kander & Ebb",
+    "year": 1975,
+    "vocal": true,
+    "genres": ["Broadway & Musical", "Jazz"]
+  },
+  {
+    "title": "Are You Lonesome Tonight",
+    "artist": "Charles Hart",
+    "year": 1926,
+    "vocal": false,
+    "genres": ["Pop", "Country"]
+  },
+  {
+    "title": "Armed Services Medley",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": ["Traditional & Patriotic", "March"]
+  },
+  {
+    "title": "As Time Goes By",
+    "artist": "Dooley Wilson",
+    "year": 1931,
+    "vocal": true,
+    "genres": ["Jazz", "Pop", "Film & TV"]
+  },
+  {
+    "title": "At Last (Instrumental in F)",
+    "artist": "Glenn Miller",
+    "year": 1941,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band", "Blues"]
+  },
+  {
+    "title": "Auld Lang Syne",
+    "artist": "Traditional",
+    "year": 1788,
+    "vocal": false,
+    "genres": ["Traditional & Patriotic"]
+  },
+  {
+    "title": "Bad Bad Leroy Brown (Instrumental in Eb)",
+    "artist": "Jim Croce",
+    "year": 1973,
+    "vocal": false,
+    "genres": ["Pop", "Rock"]
+  },
+  {
+    "title": "Bad Bad Leroy Brown (Vocal in G)",
+    "artist": "Jim Croce",
+    "year": 1973,
+    "vocal": true,
+    "genres": ["Pop", "Rock"]
+  },
+  {
+    "title": "Badgertastic",
+    "artist": "Philip Dewalt",
+    "year": null,
+    "vocal": false,
+    "genres": ["Novelty"]
+  },
+  {
+    "title": "Basin Street Blues",
+    "artist": "Louis Armstrong",
+    "year": 1926,
+    "vocal": false,
+    "genres": ["Jazz", "Blues", "Dixieland"]
+  },
+  {
+    "title": "Begin The Beguine",
+    "artist": "Cole Porter",
+    "year": 1934,
+    "vocal": false,
+    "genres": ["Jazz", "Latin"]
+  },
+  {
+    "title": "Beyond The Sea",
+    "artist": "Bobby Darin",
+    "year": 1946,
+    "vocal": true,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "Big Spender",
+    "artist": "Musical 'Sweet Charity'",
+    "year": 1966,
+    "vocal": false,
+    "genres": ["Broadway & Musical", "Jazz"]
+  },
+  {
+    "title": "Blue Velvet",
+    "artist": "Tony Bennett",
+    "year": 1950,
+    "vocal": false,
+    "genres": ["Pop", "Jazz"]
+  },
+  {
+    "title": "Blueberry Hill",
+    "artist": "Fats Domino",
+    "year": 1940,
+    "vocal": false,
+    "genres": ["R&B & Soul", "Rock & Roll", "Blues"]
+  },
+  {
+    "title": "Blues in the Night",
+    "artist": "Johnny Mercer",
+    "year": 1941,
+    "vocal": false,
+    "genres": ["Blues", "Jazz"]
+  },
+  {
+    "title": "Boogie Shoes",
+    "artist": "KC & The Sunshine Band",
+    "year": 1975,
+    "vocal": false,
+    "genres": ["Disco & Dance", "R&B & Soul", "Funk"]
+  },
+  {
+    "title": "Brass Machine",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": []
+  },
+  {
+    "title": "Bye Bye Blackbird",
+    "artist": "Gene Austin",
+    "year": 1926,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "Cab Driver",
+    "artist": "Mills Brothers",
+    "year": 1968,
+    "vocal": false,
+    "genres": ["Pop", "Jazz"]
+  },
+  {
+    "title": "Cabaret",
+    "artist": "Broadway Musical",
+    "year": 1966,
+    "vocal": false,
+    "genres": ["Broadway & Musical", "Jazz"]
+  },
+  {
+    "title": "California Dreamin'",
+    "artist": "The Mamas & The Papas",
+    "year": 1965,
+    "vocal": false,
+    "genres": ["Pop", "Folk"]
+  },
+  {
+    "title": "Can't Take My Eyes Off Of You",
+    "artist": "Frankie Valli",
+    "year": 1965,
+    "vocal": false,
+    "genres": ["Pop"]
+  },
+  {
+    "title": "Caravan",
+    "artist": "Duke Ellington",
+    "year": 1936,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band", "Latin"]
+  },
+  {
+    "title": "Carry On My Wayward Son",
+    "artist": "Kansas",
+    "year": 1976,
+    "vocal": false,
+    "genres": ["Classic Rock"]
+  },
+  {
+    "title": "Celebration",
+    "artist": "Kool & The Gang",
+    "year": 1980,
+    "vocal": false,
+    "genres": ["R&B & Soul", "Funk", "Disco & Dance"]
+  },
+  {
+    "title": "Charleston",
+    "artist": "Traditional",
+    "year": 1923,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band", "Traditional & Patriotic"]
+  },
+  {
+    "title": "Chicago",
+    "artist": null,
+    "year": null,
+    "vocal": true,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "Chicken Dance",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": ["Traditional & Patriotic", "Novelty"]
+  },
+  {
+    "title": "Come Fly With Me",
+    "artist": "Frank Sinatra",
+    "year": 1957,
+    "vocal": true,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "Copacabana",
+    "artist": "Barry Manilow",
+    "year": 1978,
+    "vocal": true,
+    "genres": ["Pop", "Latin"]
+  },
+  {
+    "title": "Crazy",
+    "artist": "Willie Nelson",
+    "year": 1961,
+    "vocal": true,
+    "genres": ["Country", "Jazz"]
+  },
+  {
+    "title": "Crocodile Rock",
+    "artist": "Elton John",
+    "year": 1972,
+    "vocal": false,
+    "genres": ["Classic Rock", "Pop"]
+  },
+  {
+    "title": "Cry Me A River",
+    "artist": "Ella Fitzgerald",
+    "year": 1953,
+    "vocal": true,
+    "genres": ["Jazz", "Blues"]
+  },
+  {
+    "title": "Curious George",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": ["Novelty"]
+  },
+  {
+    "title": "Cute",
+    "artist": null,
+    "year": 1958,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "Ding-Dong, The Witch Is Dead",
+    "artist": "Movie Musical",
+    "year": 1939,
+    "vocal": false,
+    "genres": ["Film & TV", "Broadway & Musical", "Novelty"]
+  },
+  {
+    "title": "Don't Stop Believin'",
+    "artist": "Journey",
+    "year": 1981,
+    "vocal": false,
+    "genres": ["Classic Rock"]
+  },
+  {
+    "title": "Dream",
+    "artist": "Johnny Mercer",
+    "year": 1944,
+    "vocal": false,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "Dream A Little Dream Of Me",
+    "artist": "Ozzie Nelson",
+    "year": 1931,
+    "vocal": false,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "Earth, Wind & Fire Dance Mix",
+    "artist": "Earth, Wind & Fire",
+    "year": null,
+    "vocal": false,
+    "genres": ["Funk", "R&B & Soul", "Disco & Dance"]
+  },
+  {
+    "title": "Eleanor Rigby",
+    "artist": "The Beatles",
+    "year": 1966,
+    "vocal": false,
+    "genres": ["Pop", "Classic Rock"]
+  },
+  {
+    "title": "Embraceable You",
+    "artist": "George & Ira Gershwin",
+    "year": 1930,
+    "vocal": false,
+    "genres": ["Jazz", "Broadway & Musical"]
+  },
+  {
+    "title": "Everybody Needs Somebody to Love",
+    "artist": "Blues Brothers",
+    "year": 1980,
+    "vocal": false,
+    "genres": ["R&B & Soul", "Blues", "Film & TV"]
+  },
+  {
+    "title": "Everything",
+    "artist": "Michael Bublé",
+    "year": 2009,
+    "vocal": true,
+    "genres": ["Pop", "Jazz"]
+  },
+  {
+    "title": "Fly Me To The Moon",
+    "artist": "Kaye Ballard",
+    "year": 1954,
+    "vocal": false,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "Georgia On My Mind",
+    "artist": "Hoagy Carmichael",
+    "year": 1930,
+    "vocal": false,
+    "genres": ["Jazz", "Blues", "Pop"]
+  },
+  {
+    "title": "Get Back",
+    "artist": "The Beatles",
+    "year": 1969,
+    "vocal": false,
+    "genres": ["Pop", "Classic Rock"]
+  },
+  {
+    "title": "Get It On",
+    "artist": "Bill Chase",
+    "year": 1971,
+    "vocal": false,
+    "genres": ["Jazz-Rock", "Funk"]
+  },
+  {
+    "title": "God Bless America / America the Beautiful",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": ["Traditional & Patriotic"]
+  },
+  {
+    "title": "Gonna Fly Now (Theme from Rocky)",
+    "artist": "Bill Conti",
+    "year": 1977,
+    "vocal": false,
+    "genres": ["Film & TV", "Pop"]
+  },
+  {
+    "title": "Happy",
+    "artist": "Pharrell Williams",
+    "year": 2013,
+    "vocal": false,
+    "genres": ["Pop", "Funk", "R&B & Soul"]
+  },
+  {
+    "title": "Happy Birthday",
+    "artist": "Traditional",
+    "year": null,
+    "vocal": false,
+    "genres": ["Traditional & Patriotic"]
+  },
+  {
+    "title": "Haven't Met You Yet",
+    "artist": "Michael Bublé",
+    "year": 2009,
+    "vocal": true,
+    "genres": ["Pop", "Jazz"]
+  },
+  {
+    "title": "Heartache Tonight (In C)",
+    "artist": "The Eagles",
+    "year": 1979,
+    "vocal": true,
+    "genres": ["Classic Rock", "Country"]
+  },
+  {
+    "title": "Hello Dolly",
+    "artist": "Louis Armstrong",
+    "year": 1964,
+    "vocal": false,
+    "genres": ["Broadway & Musical", "Jazz"]
+  },
+  {
+    "title": "Hernando's Hideaway",
+    "artist": "Musical 'The Pajama Game'",
+    "year": 1954,
+    "vocal": false,
+    "genres": ["Broadway & Musical", "Latin"]
+  },
+  {
+    "title": "Hokey Pokey",
+    "artist": "Traditional Dance",
+    "year": 1940,
+    "vocal": false,
+    "genres": ["Traditional & Patriotic", "Novelty"]
+  },
+  {
+    "title": "Hold On, I'm Coming",
+    "artist": "Sam & Dave",
+    "year": 1966,
+    "vocal": false,
+    "genres": ["R&B & Soul"]
+  },
+  {
+    "title": "Hooked On A Feeling",
+    "artist": "B.J. Thomas / Blue Swede",
+    "year": 1968,
+    "vocal": true,
+    "genres": ["Pop"]
+  },
+  {
+    "title": "Hustle (The)",
+    "artist": "Van McCoy",
+    "year": 1975,
+    "vocal": false,
+    "genres": ["Disco & Dance", "R&B & Soul"]
+  },
+  {
+    "title": "I Can't Stop Loving You",
+    "artist": "Count Basie / Don Gibson",
+    "year": 1958,
+    "vocal": false,
+    "genres": ["Country", "R&B & Soul", "Pop"]
+  },
+  {
+    "title": "I Can't Turn You Loose",
+    "artist": "Otis Redding",
+    "year": 1965,
+    "vocal": false,
+    "genres": ["R&B & Soul", "Funk"]
+  },
+  {
+    "title": "I Fall To Pieces",
+    "artist": "Patsy Cline",
+    "year": 1961,
+    "vocal": true,
+    "genres": ["Country"]
+  },
+  {
+    "title": "I Heard It Through The Grapevine",
+    "artist": "Marvin Gaye",
+    "year": 1966,
+    "vocal": false,
+    "genres": ["R&B & Soul", "Motown"]
+  },
+  {
+    "title": "If I Only Had A Brain",
+    "artist": "Movie Musical",
+    "year": 1939,
+    "vocal": false,
+    "genres": ["Film & TV", "Broadway & Musical"]
+  },
+  {
+    "title": "I'll Never Smile Again",
+    "artist": "Ruth Lowe",
+    "year": 1939,
+    "vocal": false,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "In The Mood",
+    "artist": "Glenn Miller",
+    "year": 1939,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "It Don't Mean A Thing If It Ain't Got That Swing",
+    "artist": "Duke Ellington",
+    "year": 1931,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "I've Been Searching So Long",
+    "artist": "James Pankow (Chicago)",
+    "year": 1974,
+    "vocal": false,
+    "genres": ["Rock", "Jazz-Rock"]
+  },
+  {
+    "title": "I've Got The World On A String",
+    "artist": "Frank Sinatra / Michael Bublé",
+    "year": 1933,
+    "vocal": true,
+    "genres": ["Jazz", "Swing & Big Band", "Pop"]
+  },
+  {
+    "title": "I've Got You Under My Skin",
+    "artist": "Cole Porter",
+    "year": 1936,
+    "vocal": true,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "Jersey Bounce",
+    "artist": "Sammy Nestico",
+    "year": 1940,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Jump, Jive An' Wail",
+    "artist": "Louis Prima / Brian Setzer",
+    "year": 1956,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz", "Rock & Roll"]
+  },
+  {
+    "title": "Jumpin' At The Woodside (arr. Lowden)",
+    "artist": "Count Basie",
+    "year": 1938,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Jumpin' At The Woodside (arr. Nestico)",
+    "artist": "Count Basie",
+    "year": 1938,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Kansas City",
+    "artist": "Leiber & Stoller",
+    "year": 1952,
+    "vocal": true,
+    "genres": ["Blues", "R&B & Soul", "Rock & Roll"]
+  },
+  {
+    "title": "Kiss Of Fire",
+    "artist": "Louis Armstrong",
+    "year": 1952,
+    "vocal": false,
+    "genres": ["Jazz", "Latin"]
+  },
+  {
+    "title": "La Cumparsita",
+    "artist": "Tango",
+    "year": 1916,
+    "vocal": false,
+    "genres": ["Latin", "Traditional & Patriotic"]
+  },
+  {
+    "title": "Leaving On A Jet Plane",
+    "artist": "John Denver",
+    "year": 1966,
+    "vocal": true,
+    "genres": ["Folk", "Pop", "Country"]
+  },
+  {
+    "title": "Li'l Darlin'",
+    "artist": "Neal Hefti",
+    "year": 1958,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "Little Brown Jug",
+    "artist": "Glenn Miller",
+    "year": 1869,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz", "Traditional & Patriotic"]
+  },
+  {
+    "title": "Loco-Motion (The)",
+    "artist": "Grand Funk Railroad",
+    "year": 1962,
+    "vocal": false,
+    "genres": ["Rock & Roll", "Pop"]
+  },
+  {
+    "title": "Louie, Louie",
+    "artist": "The Kingsmen",
+    "year": 1957,
+    "vocal": false,
+    "genres": ["Rock & Roll", "R&B & Soul"]
+  },
+  {
+    "title": "L-O-V-E",
+    "artist": "Nat King Cole",
+    "year": 1965,
+    "vocal": true,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "Make Me Smile",
+    "artist": "Chicago",
+    "year": 1970,
+    "vocal": false,
+    "genres": ["Rock", "Jazz-Rock"]
+  },
+  {
+    "title": "Makin' Whoopee",
+    "artist": "Eddie Cantor",
+    "year": 1928,
+    "vocal": false,
+    "genres": ["Jazz", "Pop", "Novelty"]
+  },
+  {
+    "title": "Mambo Hot",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": ["Latin", "Disco & Dance"]
+  },
+  {
+    "title": "Marie",
+    "artist": "Irving Berlin",
+    "year": null,
+    "vocal": false,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "Midnight Train To Georgia",
+    "artist": "Gladys Knight & The Pips",
+    "year": 1973,
+    "vocal": true,
+    "genres": ["R&B & Soul"]
+  },
+  {
+    "title": "Misty",
+    "artist": "Erroll Garner",
+    "year": 1954,
+    "vocal": false,
+    "genres": ["Jazz"]
+  },
+  {
+    "title": "Mood Indigo",
+    "artist": "Duke Ellington",
+    "year": 1930,
+    "vocal": false,
+    "genres": ["Jazz", "Blues", "Swing & Big Band"]
+  },
+  {
+    "title": "Moonlight Serenade",
+    "artist": "Glenn Miller",
+    "year": 1939,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Moten Swing",
+    "artist": "Benny Moten",
+    "year": 1932,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Mr. Blue Sky",
+    "artist": "Electric Light Orchestra",
+    "year": 1978,
+    "vocal": false,
+    "genres": ["Pop", "Classic Rock"]
+  },
+  {
+    "title": "Munsters (Theme From The)",
+    "artist": "TV Theme",
+    "year": null,
+    "vocal": false,
+    "genres": ["Film & TV", "Novelty"]
+  },
+  {
+    "title": "Mustang Sally",
+    "artist": "Wilson Pickett",
+    "year": 1965,
+    "vocal": false,
+    "genres": ["R&B & Soul", "Blues"]
+  },
+  {
+    "title": "My Funny Valentine",
+    "artist": "Rodgers & Hart",
+    "year": 1937,
+    "vocal": false,
+    "genres": ["Jazz", "Broadway & Musical"]
+  },
+  {
+    "title": "My Way",
+    "artist": "Frank Sinatra",
+    "year": 1969,
+    "vocal": true,
+    "genres": ["Pop", "Jazz"]
+  },
+  {
+    "title": "New York, New York (Theme From)",
+    "artist": "John Kander",
+    "year": 1977,
+    "vocal": false,
+    "genres": ["Broadway & Musical", "Pop", "Film & TV"]
+  },
+  {
+    "title": "Nice 'N Easy",
+    "artist": "Frank Sinatra",
+    "year": 1960,
+    "vocal": false,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "Night and Day",
+    "artist": "Cole Porter",
+    "year": 1932,
+    "vocal": false,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "Night Train",
+    "artist": "Count Basie",
+    "year": 1952,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band", "Blues"]
+  },
+  {
+    "title": "Old Time Rock and Roll",
+    "artist": "Bob Seger",
+    "year": 1978,
+    "vocal": true,
+    "genres": ["Classic Rock"]
+  },
+  {
+    "title": "On The Sunny Side Of The Street",
+    "artist": "Jimmy McHugh",
+    "year": 1930,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band", "Pop"]
+  },
+  {
+    "title": "Opus One",
+    "artist": "Sy Oliver",
+    "year": 1943,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Over The Rainbow (Instrumental in Eb)",
+    "artist": "Movie Musical",
+    "year": 1939,
+    "vocal": false,
+    "genres": ["Film & TV", "Broadway & Musical"]
+  },
+  {
+    "title": "Over The Rainbow (Vocal in Bb)",
+    "artist": "Movie Musical",
+    "year": 1939,
+    "vocal": true,
+    "genres": ["Film & TV", "Broadway & Musical"]
+  },
+  {
+    "title": "Pennsylvania 6-5000",
+    "artist": "Glenn Miller",
+    "year": 1940,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Perdido Cha-Cha",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": ["Latin", "Jazz"]
+  },
+  {
+    "title": "Pink Panther (Tenor Feature)",
+    "artist": "Henry Mancini",
+    "year": null,
+    "vocal": false,
+    "genres": ["Film & TV", "Jazz"]
+  },
+  {
+    "title": "Pink Panther (Full Band)",
+    "artist": "Henry Mancini",
+    "year": 1964,
+    "vocal": false,
+    "genres": ["Film & TV", "Jazz"]
+  },
+  {
+    "title": "Pontchartrain Beach",
+    "artist": "New Orleans Nightcrawlers",
+    "year": 2017,
+    "vocal": false,
+    "genres": ["Jazz", "Funk"]
+  },
+  {
+    "title": "Prom Jump",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": []
+  },
+  {
+    "title": "Proud Mary",
+    "artist": "John Fogerty (CCR)",
+    "year": 1969,
+    "vocal": false,
+    "genres": ["Classic Rock", "R&B & Soul"]
+  },
+  {
+    "title": "Queen Bee (The)",
+    "artist": "Count Basie / Sammy Nestico",
+    "year": 1964,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Relaxin'",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": ["Jazz"]
+  },
+  {
+    "title": "Rockin' Robin",
+    "artist": "Bobby Day",
+    "year": 1958,
+    "vocal": false,
+    "genres": ["Rock & Roll", "Pop"]
+  },
+  {
+    "title": "Rose Room",
+    "artist": "Duke Ellington",
+    "year": 1917,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "Satin Doll",
+    "artist": "Duke Ellington",
+    "year": 1953,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "Saturday In The Park",
+    "artist": "Chicago",
+    "year": 1972,
+    "vocal": false,
+    "genres": ["Rock", "Jazz-Rock", "Pop"]
+  },
+  {
+    "title": "Sentimental Journey",
+    "artist": "Les Brown / Doris Day",
+    "year": 1944,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz", "Pop"]
+  },
+  {
+    "title": "September",
+    "artist": "Earth, Wind & Fire",
+    "year": 1978,
+    "vocal": false,
+    "genres": ["Funk", "R&B & Soul", "Disco & Dance", "Pop"]
+  },
+  {
+    "title": "Sir Duke",
+    "artist": "Stevie Wonder",
+    "year": 1977,
+    "vocal": false,
+    "genres": ["Funk", "R&B & Soul", "Jazz", "Pop"]
+  },
+  {
+    "title": "Smooth",
+    "artist": "Carlos Santana",
+    "year": 1999,
+    "vocal": false,
+    "genres": ["Latin", "Classic Rock", "Pop"]
+  },
+  {
+    "title": "Somebody Loves Me",
+    "artist": "George Gershwin",
+    "year": 1924,
+    "vocal": false,
+    "genres": ["Jazz", "Broadway & Musical"]
+  },
+  {
+    "title": "Someone Like You",
+    "artist": "Musical",
+    "year": 1990,
+    "vocal": true,
+    "genres": ["Broadway & Musical", "Pop"]
+  },
+  {
+    "title": "Soul Man",
+    "artist": "Isaac Hayes",
+    "year": 1967,
+    "vocal": false,
+    "genres": ["R&B & Soul"]
+  },
+  {
+    "title": "Spanish Flea",
+    "artist": "Herb Alpert",
+    "year": 1965,
+    "vocal": false,
+    "genres": ["Latin", "Jazz", "Pop"]
+  },
+  {
+    "title": "Spinning Wheel",
+    "artist": "Blood, Sweat & Tears",
+    "year": 1969,
+    "vocal": false,
+    "genres": ["Jazz-Rock", "Rock"]
+  },
+  {
+    "title": "Splish Splash",
+    "artist": "Bobby Darin",
+    "year": 1958,
+    "vocal": true,
+    "genres": ["Rock & Roll", "Pop"]
+  },
+  {
+    "title": "Squiby McGee",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": []
+  },
+  {
+    "title": "St. Louis Blues March",
+    "artist": "W.C. Handy",
+    "year": 1914,
+    "vocal": false,
+    "genres": ["Blues", "Jazz", "March"]
+  },
+  {
+    "title": "Star Dust",
+    "artist": "Hoagy Carmichael",
+    "year": 1927,
+    "vocal": false,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "Strangers In The Night",
+    "artist": "Bert Kaempfert",
+    "year": 1966,
+    "vocal": false,
+    "genres": ["Pop", "Jazz"]
+  },
+  {
+    "title": "String Of Pearls (A)",
+    "artist": "Glenn Miller",
+    "year": 1941,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Stripper (The)",
+    "artist": "David Rose",
+    "year": 1958,
+    "vocal": false,
+    "genres": ["Jazz", "Novelty"]
+  },
+  {
+    "title": "Sway",
+    "artist": "Dean Martin / Michael Bublé",
+    "year": 1953,
+    "vocal": false,
+    "genres": ["Latin", "Pop", "Jazz"]
+  },
+  {
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond",
+    "year": 1969,
+    "vocal": true,
+    "genres": ["Pop", "Rock"]
+  },
+  {
+    "title": "Sweet Georgia Brown",
+    "artist": "Sammy Nestico",
+    "year": 1925,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "Tailspin",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Take Five",
+    "artist": "Paul Desmond",
+    "year": 1960,
+    "vocal": false,
+    "genres": ["Jazz"]
+  },
+  {
+    "title": "Take The 'A' Train",
+    "artist": "Billy Strayhorn",
+    "year": 1941,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Taste Of Honey (A)",
+    "artist": "Herb Alpert",
+    "year": null,
+    "vocal": false,
+    "genres": ["Jazz", "Latin", "Pop"]
+  },
+  {
+    "title": "Temptation Eyes",
+    "artist": "The Grass Roots",
+    "year": 1970,
+    "vocal": false,
+    "genres": ["Rock", "Pop"]
+  },
+  {
+    "title": "Tennessee Waltz",
+    "artist": "Stewart & King",
+    "year": 1947,
+    "vocal": false,
+    "genres": ["Country", "Pop"]
+  },
+  {
+    "title": "That Warm Feeling",
+    "artist": "Nestico / Basie",
+    "year": 1968,
+    "vocal": false,
+    "genres": ["Jazz", "Swing & Big Band"]
+  },
+  {
+    "title": "That's Life",
+    "artist": "Frank Sinatra",
+    "year": 1966,
+    "vocal": true,
+    "genres": ["Pop", "Jazz"]
+  },
+  {
+    "title": "That's The Way Of The World",
+    "artist": "Earth, Wind & Fire",
+    "year": 1975,
+    "vocal": false,
+    "genres": ["Funk", "R&B & Soul", "Jazz"]
+  },
+  {
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "year": 1982,
+    "vocal": false,
+    "genres": ["Pop", "R&B & Soul", "Rock"]
+  },
+  {
+    "title": "Tijuana Taxi",
+    "artist": "Herb Alpert",
+    "year": 1965,
+    "vocal": false,
+    "genres": ["Latin", "Jazz", "Pop"]
+  },
+  {
+    "title": "Tiny Bubbles",
+    "artist": "Don Ho",
+    "year": 1966,
+    "vocal": false,
+    "genres": ["Pop", "Novelty"]
+  },
+  {
+    "title": "Tuxedo Junction",
+    "artist": "Glenn Miller",
+    "year": 1938,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "Twilight Time",
+    "artist": "Les Brown",
+    "year": 1944,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz", "Pop"]
+  },
+  {
+    "title": "Uptown Funk",
+    "artist": "Bruno Mars",
+    "year": 2014,
+    "vocal": false,
+    "genres": ["Funk", "R&B & Soul", "Pop"]
+  },
+  {
+    "title": "Vehicle",
+    "artist": "Ides of March",
+    "year": 1970,
+    "vocal": false,
+    "genres": ["Jazz-Rock", "Rock"]
+  },
+  {
+    "title": "Walking On Sunshine",
+    "artist": "Katrina & The Waves",
+    "year": 1985,
+    "vocal": false,
+    "genres": ["Pop", "Rock"]
+  },
+  {
+    "title": "Warrigal Road",
+    "artist": null,
+    "year": null,
+    "vocal": false,
+    "genres": []
+  },
+  {
+    "title": "Way You Look Tonight (The)",
+    "artist": "Fred Astaire",
+    "year": 1936,
+    "vocal": true,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "What A Wonderful World",
+    "artist": "Louis Armstrong",
+    "year": 1967,
+    "vocal": true,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "When I'm Sixty-Four",
+    "artist": "The Beatles",
+    "year": 1967,
+    "vocal": false,
+    "genres": ["Pop", "Classic Rock"]
+  },
+  {
+    "title": "When Sunny Gets Blue",
+    "artist": "Johnny Mathis",
+    "year": 1956,
+    "vocal": false,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "Willow Weep For Me",
+    "artist": "Ann Ronell",
+    "year": 1932,
+    "vocal": false,
+    "genres": ["Jazz", "Blues"]
+  },
+  {
+    "title": "Woodchopper's Ball",
+    "artist": "Woody Herman",
+    "year": 1939,
+    "vocal": false,
+    "genres": ["Swing & Big Band", "Jazz"]
+  },
+  {
+    "title": "YMCA",
+    "artist": "Village People",
+    "year": 1978,
+    "vocal": false,
+    "genres": ["Disco & Dance", "Pop"]
+  },
+  {
+    "title": "You Are The Sunshine Of My Life",
+    "artist": "Stevie Wonder",
+    "year": 1973,
+    "vocal": true,
+    "genres": ["Pop", "R&B & Soul", "Jazz"]
+  },
+  {
+    "title": "You Light Up My Life",
+    "artist": "Debbie Boone",
+    "year": 1977,
+    "vocal": true,
+    "genres": ["Pop"]
+  },
+  {
+    "title": "You Made Me Love You",
+    "artist": "Al Jolson",
+    "year": 1913,
+    "vocal": false,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "You Make Me Feel So Young",
+    "artist": "Myrow & Gordon",
+    "year": 1946,
+    "vocal": false,
+    "genres": ["Jazz", "Pop", "Swing & Big Band"]
+  },
+  {
+    "title": "Young At Heart",
+    "artist": "Frank Sinatra",
+    "year": 1953,
+    "vocal": false,
+    "genres": ["Jazz", "Pop"]
+  },
+  {
+    "title": "You're Nobody 'Til Somebody Loves You",
+    "artist": "Dean Martin",
+    "year": 1944,
+    "vocal": true,
+    "genres": ["Jazz", "Pop"]
+  }
+]
