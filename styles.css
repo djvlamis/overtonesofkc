@@ -16,7 +16,7 @@ body {
 header {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: white;
-    padding: 1rem 0;
+    padding: 0.6rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -70,7 +70,7 @@ nav {
                 url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23222" width="1200" height="600"/></svg>');
     background-size: cover;
     background-position: center;
-    height: 500px;
+    height: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +86,7 @@ nav {
 
 .hero-content .tagline {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     color: #d4af37;
     font-weight: 300;
 }
@@ -112,7 +112,7 @@ nav {
 .section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
 }
 
 .section h2 {
@@ -297,7 +297,7 @@ footer {
 .page-header {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: white;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     text-align: center;
 }
 
@@ -314,7 +314,7 @@ footer {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 1.5rem 2rem;
 }
 
 .intro {
