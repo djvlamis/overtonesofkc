@@ -323,18 +323,9 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">The Overtones of KC</div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="musicians.html">Musicians</a></li>
-                <li><a href="music.html">Music</a></li>
-                <li><a href="index.html#calendar">Calendar</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <nav></nav>
     </header>
+    <script src="nav.js?v=2"></script>
 
     <div class="page-header">
         <h1>Music Repertoire</h1>
@@ -432,7 +423,7 @@
     </div>
 
     <footer></footer>
-    <script src="footer.js"></script>
+    <script src="footer.js?v=2"></script>
 
     <script>
         let allSongs = [];
@@ -579,15 +570,7 @@
             document.getElementById(id).addEventListener('change', applyFilters);
         });
 
-        // Mobile nav toggle
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
+        // Nav handled by nav.js
     </script>
 </body>
 </html>

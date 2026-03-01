@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p><a href="mailto:overtonesofkc@gmail.com">overtonesofkc@gmail.com</a></p>
-                <p><a href="https://facebook.com/OvertonesofKC" target="_blank">Follow us on Facebook</a></p>
+                <p><a href="mailto:overtonesofkc@gmail.com" target="_blank" style="color:#d4af37;">overtonesofkc@gmail.com</a></p>
+                <p><a href="https://facebook.com/OvertonesofKC" target="_blank" style="color:#d4af37;">Follow us on Facebook</a></p>
             </div>
         </div>
         <div class="footer-bottom">

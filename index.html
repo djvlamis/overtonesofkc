@@ -8,19 +8,9 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">The Overtones of KC</div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="musicians.html">Musicians</a></li>
-                <li><a href="music.html">Music</a></li>
-                <li><a href="#calendar">Calendar</a></li>
-                <li><a href="#photos">Photos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <nav></nav>
     </header>
+    <script src="nav.js?v=2"></script>
 
     <section class="hero" id="home">
         <div class="hero-content">
@@ -38,7 +28,7 @@
                 
                 <p>Since 1997, The Overtones of Kansas City have been playing the best known big band standards and top contemporary music. Big bands are back and we are ready to entertain you with music that is begging to be danced to.</p>
                 
-                <p>We've performed for weddings, anniversaries, city festivals, corporate dinners, fund raisers and veteran appreciation events. We can tailor your performance to the dancer in all of us or to the sentimentalist who just wants to bring back memories of a simpler time.</p>
+                <p>We've performed for weddings, anniversaries, city festivals, corporate dinners, fund raisers and veteran appreciation events. We can tailor our performance to fit your entertainment needs.</p>
                 
                 <p><strong>Regardless of your age or musical tastes, if you like Big Band at all you will LOVE the OVERTONES!</strong></p>
             </div>
@@ -102,19 +92,10 @@
     </section>
 
     <footer id="contact"></footer>
-    <script src="footer.js"></script>
+    <script src="footer.js?v=2"></script>
 
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-        
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
+        // Nav handled by nav.js
     </script>
 </body>
 </html>
