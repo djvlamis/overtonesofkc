@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
         { href: 'index.html',    label: 'Home' },
         { href: 'musicians.html', label: 'Musicians' },
         { href: 'music.html',    label: 'Music' },
+        { href: 'videos.html',   label: 'Videos' },
         { href: 'index.html#calendar', label: 'Calendar' },
-        { href: 'index.html#contact',  label: 'Contact' },
+        { href: 'contact.html',  label: 'Contact' },
     ];
 
     const linkItems = navLinks.map(link => {

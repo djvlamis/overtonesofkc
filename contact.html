@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CONTACT PAGE SPECIFIC STYLES */
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* LEFT COLUMN — Info panel */
+        .contact-info {
+            position: sticky;
+            top: 5rem;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info .lead {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .info-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .info-card h3 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #999;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-card p,
+        .info-card a {
+            color: #1a1a2e;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .info-card a:hover {
+            color: #d4af37;
+        }
+
+        .info-card .sub {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 400;
+            margin-top: 0.15rem;
+        }
+
+        .facebook-card {
+            border-left: 4px solid #1877F2;
+        }
+
+        .email-card {
+            border-left: 4px solid #d4af37;
+        }
+
+        .phone-card {
+            border-left: 4px solid #43e97b;
+        }
+
+        /* Bot-resistant phone rendering — CSS ::before injects each digit */
+        .phone-obfuscated {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            letter-spacing: 0.02em;
+            user-select: text;
+        }
+
+        .phone-obfuscated span {
+            display: inline;
+        }
+
+        .phone-obfuscated span::before {
+            content: attr(data-d);
+        }
+
+        /* RIGHT COLUMN — Form */
+        .contact-form-wrapper {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-form-wrapper h2 {
+            font-size: 1.8rem;
+            color: #1a1a2e;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-form-wrapper .form-subtitle {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #555;
+            margin-bottom: 0.45rem;
+        }
+
+        .form-group label .required {
+            color: #d4af37;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #333;
+            background: #fafafa;
+            transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.12);
+        }
+
+        .form-group textarea {
+            height: 130px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        /* Event type checkboxes */
+        .event-types {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .event-type-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #444;
+            transition: all 0.2s;
+            background: #fafafa;
+        }
+
+        .event-type-label:hover {
+            border-color: #d4af37;
+            background: #fdf9ee;
+        }
+
+        .event-type-label input[type="checkbox"] {
+            width: auto;
+            padding: 0;
+            accent-color: #d4af37;
+        }
+
+        /* Submit button */
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            color: #1a1a2e;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: #aaa;
+            text-align: center;
+            margin-top: 0.75rem;
+        }
+
+        /* Success message shown after submit */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .success-message.visible {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message h2 {
+            color: #1a1a2e;
+            margin-bottom: 0.75rem;
+        }
+
+        .success-message p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                position: static;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .event-types {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <script src="nav.js?v=3"></script>
+
+    <div class="page-header">
+        <h1>Book The Overtones</h1>
+        <p>Let's make your next event swing</p>
+    </div>
+
+    <div class="container">
+        <div class="contact-layout">
+
+            <!-- LEFT: Contact info -->
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p class="lead">Ready to bring Kansas City's premier big band to your event? We'd love to hear from you. Fill out the form and we'll get back to you promptly.</p>
+
+                <div class="info-card email-card">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <h3>Email</h3>
+                        <a href="mailto:overtonesofkc@gmail.com">overtonesofkc@gmail.com</a>
+                        <p class="sub">We respond within 1–2 business days</p>
+                    </div>
+                </div>
+
+                <div class="info-card facebook-card">
+                    <div class="info-icon">👍</div>
+                    <div>
+                        <h3>Facebook</h3>
+                        <a href="https://facebook.com/OvertonesofKC" target="_blank" rel="noopener">facebook.com/OvertonesofKC</a>
+                        <p class="sub">Follow us for upcoming events</p>
+                    </div>
+                </div>
+
+                <div class="info-card phone-card">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p style="font-weight:600; color:#1a1a2e; margin-bottom:0.15rem;">Larry Fitzpatrick, Band Director</p>
+                        <!-- Phone number rendered via CSS spans to deter bot scraping.
+                             Each digit/character is a separate span with a data attribute;
+                             CSS assembles them visually. Screen readers still read the
+                             aria-label on the wrapper. -->
+                        <p class="phone-obfuscated" aria-label="Phone: 816-260-7869">
+                            <span data-d="("></span><span data-d="8"></span><span data-d="1"></span><span data-d="6"></span><span data-d=")"></span><span data-d=" "></span><span data-d="2"></span><span data-d="6"></span><span data-d="0"></span><span data-d="-"></span><span data-d="7"></span><span data-d="8"></span><span data-d="6"></span><span data-d="9"></span>
+                        </p>
+                        <p class="sub">Best for event inquiries</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Form -->
+            <div class="contact-form-wrapper">
+
+                <div id="formView">
+                    <h2>Send Us a Message</h2>
+                    <p class="form-subtitle">Tell us about your event and we'll follow up soon.</p>
+
+                    <!--
+                    GOOGLE FORM CONNECTION:
+                    This form posts silently to Google Forms (Overtones Interest).
+                    Field IDs extracted from the pre-fill URL provided March 2026.
+                    To update: get a new pre-fill URL from forms.google.com and
+                    replace the entry.XXXXXXXXX values and the action URL below.
+
+                    Email notifications: In Google Forms → Responses tab →
+                    3-dot menu → "Get email notifications for new responses"
+                    -->
+                    <form id="contactForm"
+                          action="https://docs.google.com/forms/d/e/1FAIpQLScqicvKI7qwICftsd-Pl27PLSGed98ltU9HP6NzmCOhIza3fQ/formResponse"
+                          method="POST"
+                          target="hidden_iframe"
+                          onsubmit="handleSubmit()">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="entry.159425455"
+                                       placeholder="Jane Smith" required autocomplete="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="entry.147578217"
+                                       placeholder="jane@example.com" required autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="entry.345828901"
+                                       placeholder="(816) 555-0100" autocomplete="tel">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDate">Approximate Event Date</label>
+                                <input type="text" id="eventDate" name="entry.165471538"
+                                       placeholder="e.g. June 2026 or 06/14/2026">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Event Type</label>
+                            <div class="event-types">
+                                <label class="event-type-label">
+                                    <input type="checkbox" name="entry.972762944" value="Wedding"> 💍 Wedding
+                                </label>
+                                <label class="event-type-label">
+                                    <input type="checkbox" name="entry.972762944" value="Corporate Event"> 🏢 Corporate Event
+                                </label>
+                                <label class="event-type-label">
+                                    <input type="checkbox" name="entry.972762944" value="Festival / Outdoor"> 🎪 Festival / Outdoor
+                                </label>
+                                <label class="event-type-label">
+                                    <input type="checkbox" name="entry.972762944" value="Fundraiser"> 🎗️ Fundraiser
+                                </label>
+                                <label class="event-type-label">
+                                    <input type="checkbox" name="entry.972762944" value="Private Party"> 🥂 Private Party
+                                </label>
+                                <label class="event-type-label">
+                                    <input type="checkbox" name="entry.972762944" value="Other"> 🎵 Other
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message / Details <span class="required">*</span></label>
+                            <textarea id="message" name="entry.1411475637"
+                                      placeholder="Tell us about your event — venue, expected attendance, anything you'd like us to know..."
+                                      required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message 🎺</button>
+                        <p class="form-note">We'll follow up at your email address within 1–2 business days.</p>
+                    </form>
+                </div>
+
+                <!-- Hidden iframe target so page doesn't redirect on submit -->
+                <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+                <!-- Success message shown after submit -->
+                <div class="success-message" id="successMessage">
+                    <div class="success-icon">🎶</div>
+                    <h2>Message Sent!</h2>
+                    <p>Thanks for reaching out! We'll get back to you within 1–2 business days to discuss your event.</p>
+                    <br>
+                    <a href="music.html" class="cta-button" style="margin-right: 1rem;">Browse Our Music</a>
+                    <a href="index.html#calendar" class="cta-button" style="background: white; color: #1a1a2e; border: 2px solid #1a1a2e;">See Our Calendar</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+    <script src="footer.js?v=3"></script>
+
+    <script>
+        function handleSubmit() {
+            // Small delay to let the form POST to the hidden iframe, then show success
+            setTimeout(function() {
+                document.getElementById('formView').style.display = 'none';
+                document.getElementById('successMessage').classList.add('visible');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 800);
+        }
+    </script>
+</body>
+</html>

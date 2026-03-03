@@ -567,4 +567,60 @@ footer {
     .member-grid {
         grid-template-columns: 1fr;
     }
+
+    .booking-cta-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* BOOKING CTA BANNER */
+.booking-cta-section {
+    background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+    padding: 3rem 2rem !important;
+}
+
+.booking-cta-section h2 {
+    color: #1a1a2e !important;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.booking-cta-section p {
+    color: #1a1a2e;
+    font-size: 1.05rem;
+    opacity: 0.85;
+}
+
+.booking-cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.booking-cta-text {
+    flex: 1;
+}
+
+.booking-cta-btn {
+    background: #1a1a2e !important;
+    color: #d4af37 !important;
+    white-space: nowrap;
+    font-size: 1.1rem !important;
+    padding: 1rem 2.2rem !important;
+    flex-shrink: 0;
+}
+
+.booking-cta-btn:hover {
+    background: #0f0f1e !important;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
+}
+
+/* Bot-resistant phone number in footer */
+.footer-phone span::before {
+    content: attr(data-d);
 }
