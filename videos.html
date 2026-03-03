@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ============================================
+           VIDEOS PAGE
+           Videos load automatically from the YouTube
+           playlist "OvertonesofKC website playlist".
+
+           TO ADD A VIDEO TO THIS PAGE:
+           Simply add it to the YouTube playlist and
+           it will appear here automatically.
+
+           Title format should be:
+           Overtones of KC - <Venue> - <Song> - <Date>
+           ============================================ */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .video-block {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .video-block:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        /* 16:9 responsive embed */
+        .video-embed-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #111;
+        }
+
+        .video-embed-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Thumbnail shown before clicking - loads faster than iframe */
+        .video-thumbnail {
+            position: absolute;
+            inset: 0;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-thumbnail .play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.25);
+            transition: background 0.2s;
+        }
+
+        .video-thumbnail:hover .play-overlay {
+            background: rgba(0,0,0,0.45);
+        }
+
+        .play-button {
+            width: 64px;
+            height: 64px;
+            background: #ff0000;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .video-thumbnail:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        .play-button svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+            margin-left: 4px; /* optical center for triangle */
+        }
+
+        /* Caption */
+        .video-meta {
+            padding: 1.2rem 1.4rem 1.4rem;
+            border-top: 3px solid #d4af37;
+        }
+
+        .video-meta h3 {
+            font-size: 1.1rem;
+            color: #1a1a2e;
+            margin-bottom: 0.35rem;
+        }
+
+        .video-meta .event-details {
+            font-size: 0.88rem;
+            color: #888;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Loading / error states */
+        .videos-loading {
+            text-align: center;
+            padding: 3rem;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .videos-error {
+            background: #fff8e1;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .videos-error strong {
+            color: #1a1a2e;
+        }
+
+        /* Channel banner */
+        .channel-banner {
+            background: #d4af37;
+            color: #1a1a2e;
+            text-align: center;
+            padding: 0.7rem 1rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .channel-banner a {
+            color: #1a1a2e;
+            text-decoration: underline;
+        }
+
+        /* CTA */
+        .videos-cta {
+            background: #1a1a2e;
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .videos-cta h2 {
+            color: #d4af37;
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .videos-cta p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .videos-cta .cta-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-youtube {
+            background: #ff0000;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-youtube:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,0,0,0.35);
+        }
+
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav></nav>
+    </header>
+    <script src="nav.js?v=2"></script>
+
+    <div class="page-header">
+        <h1>Videos</h1>
+        <p>Watch The Overtones live in action</p>
+    </div>
+
+    <div class="container">
+
+        <div class="channel-banner">
+            🎬 See all our videos on YouTube &rarr;
+            <a href="https://www.youtube.com/@OvertonesofKC" target="_blank" rel="noopener">
+                youtube.com/@OvertonesofKC
+            </a>
+        </div>
+
+        <div id="videoContainer">
+            <div class="videos-loading">Loading videos&hellip;</div>
+        </div>
+
+        <div class="videos-cta">
+            <h2>See Us Live!</h2>
+            <p>Want to experience the Overtones in person? Check our calendar for upcoming performances, or book us for your next event.</p>
+            <div class="cta-row">
+                <a href="https://www.youtube.com/@OvertonesofKC" target="_blank" rel="noopener" class="btn-youtube">
+                    ▶ More on YouTube
+                </a>
+                <a href="index.html#contact" class="cta-button">Book Us</a>
+                <a href="index.html#calendar" class="cta-button">Upcoming Gigs</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer id="contact"></footer>
+    <script src="footer.js?v=2"></script>
+
+    <script>
+        // ============================================================
+        // CONFIGURATION — update these if the key or playlist changes
+        // ============================================================
+        const API_KEY     = 'AIzaSyBH3qILZ43FxWyh7fXJH-8GJaI8VThdlaM';
+        const PLAYLIST_ID = 'PLhvak78qsKiPYdWB78qUnsFnrA-Awzlmh';
+
+        // ============================================================
+        // TITLE PARSER
+        // Expected format: Overtones of KC - <Venue> - <Song> - <Date>
+        // Returns { song, venue, date } — all strings, or '' if missing
+        // ============================================================
+        function parseTitle(rawTitle) {
+            // Split on ' - ' (with spaces) to handle dashes in venue/song names
+            const parts = rawTitle.split(' - ').map(p => p.trim());
+
+            // Drop the "Overtones of KC" prefix if present
+            if (parts.length > 0 && parts[0].toLowerCase().includes('overtones')) {
+                parts.shift();
+            }
+
+            // After stripping prefix: [Venue, Song, Date]
+            const venue = parts[0] || '';
+            const song  = parts[1] || '';
+            const raw   = parts[2] || '';
+
+            return { song, venue, date: formatDate(raw) };
+        }
+
+        // Turns a variety of date strings into "Month YYYY"
+        function formatDate(raw) {
+            if (!raw) return '';
+            raw = raw.trim();
+
+            // Already "Month YYYY" or "Mon YYYY" e.g. "February 2026" / "Feb 2026"
+            const monthYear = raw.match(/^([A-Za-z]+)\s+(\d{4})$/);
+            if (monthYear) {
+                // Expand abbreviated months
+                const full = expandMonth(monthYear[1]);
+                return full + ' ' + monthYear[2];
+            }
+
+            // MM/DD/YYYY or M/D/YYYY
+            const mdy = raw.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+            if (mdy) {
+                const d = new Date(parseInt(mdy[3]), parseInt(mdy[1]) - 1, parseInt(mdy[2]));
+                return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            }
+
+            // MM-DD-YYYY or YYYY-MM-DD
+            const iso = raw.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            if (iso) {
+                const d = new Date(parseInt(iso[1]), parseInt(iso[2]) - 1, parseInt(iso[3]));
+                return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            }
+
+            const dmy = raw.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+            if (dmy) {
+                const d = new Date(parseInt(dmy[3]), parseInt(dmy[1]) - 1, parseInt(dmy[2]));
+                return d.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            }
+
+            // Just a 4-digit year
+            const yearOnly = raw.match(/^(\d{4})$/);
+            if (yearOnly) return raw;
+
+            // Fall back: return as-is
+            return raw;
+        }
+
+        function expandMonth(abbr) {
+            const months = {
+                jan:'January', feb:'February', mar:'March', apr:'April',
+                may:'May',     jun:'June',     jul:'July',  aug:'August',
+                sep:'September', oct:'October', nov:'November', dec:'December'
+            };
+            return months[abbr.toLowerCase().slice(0,3)] || abbr;
+        }
+
+        // ============================================================
+        // BUILD A CARD
+        // ============================================================
+        function buildCard(item) {
+            const snippet   = item.snippet;
+            const videoId   = snippet.resourceId.videoId;
+            const thumbnail = snippet.thumbnails
+                ? (snippet.thumbnails.high || snippet.thumbnails.medium || snippet.thumbnails.default).url
+                : '';
+            const { song, venue, date } = parseTitle(snippet.title);
+
+            const detailParts = [];
+            if (venue) detailParts.push(`<span>📍 ${escHtml(venue)}</span>`);
+            if (date)  detailParts.push(`<span>📅 ${escHtml(date)}</span>`);
+
+            return `
+                <div class="video-block">
+                    <div class="video-embed-wrapper">
+                        <div class="video-thumbnail" onclick="loadVideo(this, '${escAttr(videoId)}')" title="Play video">
+                            <img src="${escAttr(thumbnail)}" alt="${escAttr(snippet.title)}" loading="lazy">
+                            <div class="play-overlay">
+                                <div class="play-button">
+                                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-meta">
+                        <h3>${escHtml(song || snippet.title)}</h3>
+                        <div class="event-details">${detailParts.join('')}</div>
+                    </div>
+                </div>`;
+        }
+
+        // Replace thumbnail with live iframe when user clicks play
+        function loadVideo(el, videoId) {
+            const wrapper = el.parentElement;
+            const iframe  = document.createElement('iframe');
+            iframe.src    = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            iframe.title  = 'YouTube video player';
+            iframe.allow  = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+            iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;';
+            wrapper.innerHTML = '';
+            wrapper.appendChild(iframe);
+        }
+
+        // ============================================================
+        // FETCH PLAYLIST FROM YOUTUBE API
+        // ============================================================
+        async function loadPlaylist() {
+            const container = document.getElementById('videoContainer');
+            const url = `https://www.googleapis.com/youtube/v3/playlistItems`
+                + `?part=snippet`
+                + `&playlistId=${PLAYLIST_ID}`
+                + `&maxResults=50`
+                + `&key=${API_KEY}`;
+
+            try {
+                const res  = await fetch(url);
+                const data = await res.json();
+
+                if (data.error) {
+                    showError(container, data.error.message);
+                    return;
+                }
+
+                const items = (data.items || []).filter(item =>
+                    // Skip deleted/private videos
+                    item.snippet.title !== 'Deleted video' &&
+                    item.snippet.title !== 'Private video'
+                );
+
+                if (items.length === 0) {
+                    container.innerHTML = '<p style="color:#888;text-align:center;padding:2rem;">No videos found in playlist.</p>';
+                    return;
+                }
+
+                container.innerHTML = `<div class="video-grid">${items.map(buildCard).join('')}</div>`;
+
+            } catch (err) {
+                showError(container, err.message);
+            }
+        }
+
+        function showError(container, msg) {
+            container.innerHTML = `
+                <div class="videos-error">
+                    <strong>Could not load videos.</strong>
+                    If you're viewing this file locally (not through a web server), 
+                    the YouTube API may be blocked. Try using VS Code Live Server, 
+                    or push to GitHub Pages to test. 
+                    <br><br>
+                    <small>Technical detail: ${escHtml(msg)}</small>
+                </div>`;
+        }
+
+        function escHtml(s) {
+            return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        }
+        function escAttr(s) {
+            return String(s).replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+        }
+
+        // Go!
+        loadPlaylist();
+    </script>
+
+</body>
+</html>
