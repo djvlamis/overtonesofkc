@@ -2,8 +2,10 @@
 
 ## Current Status
 ✅ Static HTML pages with responsive design
-✅ Google Calendar embed placeholder
-✅ Navigation and basic structure
+✅ Google Calendar embed (live, using overtonesofkc@gmail.com)
+✅ Navigation (nav.js) and footer (footer.js) — shared across all pages
+✅ Music library page (music.html) — 182 songs, search/filter/sort
+✅ Videos page (videos.html) — auto-loads from YouTube playlist via API
 
 ## Phase 1: Core Integrations (Next 2-4 weeks)
 
@@ -49,7 +51,15 @@
 
 ---
 
-### 3. Audio Sample Integration 🎵
+### 3. YouTube Video Gallery ✅ COMPLETE
+**Status**: Live at videos.html
+**How it works**: Fetches videos automatically from YouTube playlist via YouTube Data API v3
+**To add a video**: Add it to the "OvertonesofKC website playlist" on YouTube — no code changes needed
+**API details**: See CLAUDE.md → API Keys & External Services
+
+---
+
+### 4. Audio Sample Integration 🎵
 **Platforms to integrate**:
 
 #### SoundCloud
@@ -77,7 +87,7 @@
 
 ---
 
-### 4. Live Gig Voting System 🎤
+### 5. Live Gig Voting System 🎤
 **Recommended tool**: Slido or Mentimeter
 
 #### Slido Setup
@@ -113,7 +123,7 @@
 
 ## Phase 2: Enhanced Features (1-3 months out)
 
-### 5. Photo Gallery 📸
+### 6. Photo Gallery 📸
 **Options**:
 
 #### Option A: Simple HTML Grid
@@ -142,7 +152,7 @@
 
 ---
 
-### 6. Contact Form 📧
+### 7. Contact Form 📧
 **Options**:
 
 #### Option A: Formspree
@@ -170,7 +180,7 @@
 
 ---
 
-### 7. Email Newsletter Signup 📬
+### 8. Email Newsletter Signup 📬
 **Integration**: Mailchimp or Buttondown
 
 #### Mailchimp
@@ -197,7 +207,7 @@
 
 ## Phase 3: Advanced Features (3-6 months)
 
-### 8. Merchandise Store 🛒
+### 9. Merchandise Store 🛒
 **Only if band decides to sell t-shirts, CDs, etc.**
 
 #### Printful + Shopify Lite
@@ -215,7 +225,7 @@
 
 ---
 
-### 9. Analytics 📊
+### 10. Analytics 📊
 **Google Analytics 4**
 - See how many people visit
 - Which pages are popular
@@ -228,7 +238,7 @@
 
 ---
 
-### 10. SEO Optimization 🔍
+### 11. SEO Optimization 🔍
 **Make site findable on Google**
 
 Actions needed:
@@ -249,20 +259,20 @@ Actions needed:
 
 ### Must Have (Do first)
 1. ✅ Google Calendar embed
-2. 🔄 Music library page (basic version)
-3. 📧 Contact form (Formspree)
-4. 📸 Photo gallery (Google Photos embed)
+2. ✅ Music library page
+3. ✅ YouTube video gallery
+4. 📧 Contact form (Formspree)
+5. 📸 Photo gallery
 
 ### Should Have (Next)
-5. 🎵 Audio samples (SoundCloud)
-6. 🎤 Live voting system (Slido trial)
-7. 📊 Google Analytics
-8. 🔍 Basic SEO
+6. 🎵 Audio samples (SoundCloud)
+7. 🎤 Live voting system (Slido trial)
+8. 📊 Google Analytics
+9. 🔍 Basic SEO
 
 ### Nice to Have (Later)
-9. 📬 Email newsletter
-10. 🛒 Merchandise (if desired)
-11. 🎥 YouTube video gallery
+10. 📬 Email newsletter
+11. 🛒 Merchandise (if desired)
 12. 🏆 Testimonials section
 
 ---

@@ -5,9 +5,10 @@ You are helping build a website for The Overtones of Kansas City, a 16-piece big
 
 ## Current Status
 - ✅ Homepage (index.html) - Complete with hero, about, calendar embed, features
-- ✅ Members page (members.html) - Band roster by section (no birthdays!)
+- ✅ Members page (musicians.html) - Band roster by section (no birthdays!)
 - ✅ Shared styles (styles.css) - Responsive design, navy/gold theme
-- ⏳ Music library page - Needs to be built
+- ✅ Music library page (music.html) - Complete with search, filter, sort
+- ✅ Videos page (videos.html) - Auto-loads from YouTube playlist via API
 - ⏳ Photos page - Not started
 - ⏳ Contact form - Not started
 
@@ -246,15 +247,57 @@ Add to HTML <head>:
 - Verify calendar ID in embed code
 - Check iframe isn't blocked by ad blockers
 
+## API Keys & External Services
+
+### YouTube Data API v3
+**Purpose**: Powers the auto-loading video gallery on videos.html
+**Google Cloud Project**: Overtones website (or similar — check console.cloud.google.com)
+**API Key (Key 2)**: AIzaSyBH3qILZ43FxWyh7fXJH-8GJaI8VThdlaM
+**Key is stored in**: videos.html, in the CONFIG section near the bottom
+**Playlist ID**: PLhvak78qsKiPYdWB78qUnsFnrA-Awzlmh
+**Playlist name**: OvertonesofKC website playlist
+**Channel**: https://www.youtube.com/@OvertonesofKC
+
+**Allowed domains (set in Google Cloud Console):**
+- djvlamis.github.io/*
+- overtonesofkc.com
+- usepastel.com
+
+**To add a new video to the website**: Add it to the YouTube playlist — the page updates automatically. No code changes needed.
+
+**Video title format**: `Overtones of KC - <Venue> - <Song Title> - <Date>`
+Example: `Overtones of KC - Blue Room - In The Mood - Feb 2026`
+Date can be: `Feb 2026`, `February 2026`, `2/15/2026`, or `02-15-2026`
+
+**If you need to rotate the API key:**
+1. Go to console.cloud.google.com → Credentials
+2. Click the key → Rotate key
+3. Copy the new key
+4. Update the `API_KEY` constant in videos.html
+5. Re-add the allowed domain restrictions (they don't carry over after rotation)
+6. Commit and push videos.html
+
+**If the videos stop loading**, check:
+- The API key is still valid (console.cloud.google.com)
+- The domain the site is served from is in the allowed domains list
+- The playlist is still set to Public on YouTube
+- The YouTube Data API v3 is still enabled in the project
+
+---
+
 ## Security & Privacy
 
 ### What to NEVER commit to GitHub
 - Personal band member email addresses
 - Any passwords
-- API keys (if you add any services)
 - Personal phone numbers or addresses
 - Member birthdates
 - Any sensitive contact information
+
+**Note on the YouTube API key in videos.html**: This key is intentionally in the
+HTML source — it is a read-only public data key, restricted to specific domains.
+This is standard practice for this type of integration. Do not add any keys that
+have write access or billing permissions to the codebase.
 
 ### What's OK to publish
 - Band contact email and phone
