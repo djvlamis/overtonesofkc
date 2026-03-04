@@ -6,6 +6,7 @@
 ✅ Navigation (nav.js) and footer (footer.js) — shared across all pages
 ✅ Music library page (music.html) — 182 songs, search/filter/sort
 ✅ Videos page (videos.html) — auto-loads from YouTube playlist via API
+✅ Contact page (contact.html) — booking inquiry form via Formspree
 
 ## Phase 1: Core Integrations (Next 2-4 weeks)
 
@@ -152,31 +153,55 @@
 
 ---
 
-### 7. Contact Form 📧
-**Options**:
+### 7. Contact Form ✅ COMPLETE
+**Status**: Live at contact.html
 
-#### Option A: Formspree
-- Add form to HTML
-- Action points to Formspree endpoint
-- Emails sent to overtonesofkc@gmail.com
-- Free tier: 50 submissions/month
-- **Effort**: 1 hour
-- **Cost**: Free
+#### Implementation: Formspree
+- **Endpoint**: https://formspree.io/f/mgolgrvk
+- **Formspree account**: dvlamis@gmail.com
+- **Notifications sent to**: overtonesofkc@gmail.com
+- **Reply-To**: set to submitter's email address (name="email" field)
+  so Larry can reply directly to inquiries from his inbox
+- **Free tier**: 50 submissions/month (plenty for band website)
+- **Spam protection**: Formshield enabled (default)
+- **CAPTCHA**: off (Turnstile available if spam becomes an issue)
+- **Form fields**: Name, Email, Phone, Event Date, Event Type, Message
+- **Submission handling**: fetch() API, no page redirect
+- **Success screen**: shown after successful submission
+- **Error handling**: fallback alert with direct email address
 
-#### Option B: Netlify Forms
-- If you switch to Netlify hosting
-- 100 submissions/month free
-- **Effort**: 1 hour
-- **Cost**: Free
+#### What was tried first (and why abandoned)
+1. **Google Forms hidden iframe POST**: Built a custom-styled form that
+   POSTed silently to Google Forms via a hidden iframe. Google blocks
+   cross-origin POSTs so submissions never arrived. Abandoned.
 
-#### Option C: Google Forms
-- Embed Google Form on page
-- Responses go to Google Sheets
-- **Effort**: 30 minutes
-- **Cost**: Free
-- **Limitation**: Looks like Google Form
+2. **Google Forms direct embed**: Would have worked but loses all
+   custom styling. Not pursued.
 
-**Recommendation**: Option A (Formspree) - clean, simple, professional
+#### Gmail auto-reply attempt (abandoned)
+Goal: Have Gmail auto-reply to form submitters confirming receipt.
+
+What was tried:
+- Enabled Gmail Templates (Settings → Advanced)
+- Created template "Overtones Auto Reply" (still exists in Gmail,
+  can be reused later)
+- Created Gmail filter: subject contains "New submission from
+  Overtones Interest" → Send template "Overtones Auto Reply"
+- Filter screenshot saved (March 2026)
+
+Why it failed:
+- Gmail's auto-reply honors the **From** address, not the **Reply-To**
+- Formspree sends notifications From: noreply@formspree.io
+- Gmail auto-reply fired but went to Formspree's bounce address,
+  not to the person who submitted the form
+- Filter has been deleted from Gmail to prevent misfires
+- Template "Overtones Auto Reply" left in Gmail for potential future use
+
+Future options if auto-reply is needed:
+- **Formspree paid plan** (~$10/month): includes built-in auto-responder
+  that sends directly to submitter, bypassing the Reply-To issue entirely
+- **Web3Forms** (free): includes auto-reply, works with static sites
+- **EmailJS** (free tier): sends email directly from JavaScript
 
 ---
 
