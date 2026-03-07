@@ -8,12 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const page = window.location.pathname.split('/').pop() || 'index.html';
 
     const navLinks = [
-        { href: 'index.html',    label: 'Home' },
-        { href: 'musicians.html', label: 'Musicians' },
-        { href: 'music.html',    label: 'Music' },
-        { href: 'videos.html',   label: 'Videos' },
-        { href: 'index.html#calendar', label: 'Calendar' },
-        { href: 'contact.html',  label: 'Contact' },
+        { href: 'index.html',         label: 'Home' },
+        { href: 'musicians.html',     label: 'Musicians' },
+        { href: 'music.html',         label: 'Music' },
+        { href: 'videos.html',        label: 'Videos' },
+        { href: 'photos.html',        label: 'Photos' },
+        { href: 'testimonials.html',  label: 'Testimonials' },
+        { href: 'calendar.html',       label: 'Calendar' },
+        { href: 'contact.html',       label: 'Contact' },
     ];
 
     const linkItems = navLinks.map(link => {

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .photo-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-caption {
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* LIGHTBOX */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+        }
+
+        .lightbox-inner {
+            position: relative;
+            max-width: 1100px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .lightbox-inner img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 6px;
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            color: #ccc;
+            margin-top: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -2.5rem;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 0.5rem 0.9rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .lightbox-prev { left: -3.5rem; }
+        .lightbox-next { right: -3.5rem; }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .photo-card img {
+                height: 160px;
+            }
+
+            .lightbox-prev { left: 0; }
+            .lightbox-next { right: 0; }
+        }
+
+        @media (max-width: 480px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .photos-cta {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .photos-cta h2 {
+            color: #d4af37;
+            margin-bottom: 0.75rem;
+        }
+
+        .photos-cta p {
+            color: #ccc;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <script src="nav.js?v=5"></script>
+
+    <div class="page-header">
+        <h1>Photos</h1>
+        <p>The Overtones of Kansas City performing across the KC area</p>
+    </div>
+
+    <div class="container">
+
+        <div class="photo-grid" id="photoGrid">
+
+            <div class="photo-card" onclick="openLightbox(0)">
+                <img src="media/vlcsnap-2026-03-07-15h01m10s195.png" alt="Full band on stage with Overtones music stands">
+                <div class="photo-caption">Full band on stage — Overtones music stands front and center</div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(1)">
+                <img src="media/vlcsnap-2026-03-07-15h00m51s625.png" alt="Aerial view of the full band performing in a decorated venue">
+                <div class="photo-caption">Bird's-eye view — full 16-piece ensemble filling the room</div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(2)">
+                <img src="media/vlcsnap-2026-03-07-15h02m47s701.png" alt="Full band performing with trumpets standing">
+                <div class="photo-caption">Brass section standing for a feature number</div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(3)">
+                <img src="media/vlcsnap-2026-03-07-15h05m31s203.png" alt="Band performing in white shirts at a community event">
+                <div class="photo-caption">Community performance — casual white-shirt show</div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(4)">
+                <img src="media/vlcsnap-2026-03-07-15h04m43s807.png" alt="Bride and groom sharing their first dance">
+                <div class="photo-caption">First dance — the Overtones setting the perfect wedding mood</div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(5)">
+                <img src="media/vlcsnap-2026-03-07-15h04m30s799.png" alt="Guests dancing at an event">
+                <div class="photo-caption">Getting everyone on the dance floor</div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(6)">
+                <img src="media/vlcsnap-2026-03-07-15h00m30s286.png" alt="Band members in tuxedos posing outdoors before a performance">
+                <div class="photo-caption">Ready to perform — band members dressed and in good spirits</div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(7)">
+                <img src="media/OvertonesNYE1.png" alt="The Overtones performing at a New Year's Eve event">
+                <div class="photo-caption">New Year's Eve performance</div>
+            </div>
+
+            <div class="photo-card" onclick="openLightbox(8)">
+                <img src="media/Overtones_DanV.png" alt="Dan Vlamis performing on trombone">
+                <div class="photo-caption">Dan Vlamis on trombone</div>
+            </div>
+
+        </div>
+
+        <div class="photos-cta">
+            <h2>Hire Us for Your Next Event</h2>
+            <p>Make memories that last. The Overtones bring the full big band experience to weddings, corporate events, festivals, and more.</p>
+            <a href="contact.html" class="cta-button">Contact Us to Book</a>
+        </div>
+
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox" onclick="handleOverlayClick(event)">
+        <div class="lightbox-inner">
+            <button class="lightbox-close" onclick="closeLightbox()" title="Close">&times;</button>
+            <button class="lightbox-prev" onclick="prevPhoto(event)" title="Previous">&#8249;</button>
+            <img id="lightboxImg" src="" alt="">
+            <button class="lightbox-next" onclick="nextPhoto(event)" title="Next">&#8250;</button>
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <footer></footer>
+    <script src="footer.js?v=5"></script>
+
+    <script>
+        const photos = Array.from(document.querySelectorAll('.photo-card')).map(card => ({
+            src: card.querySelector('img').src,
+            alt: card.querySelector('img').alt,
+            caption: card.querySelector('.photo-caption').textContent
+        }));
+
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            showPhoto(currentIndex);
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showPhoto(index) {
+            document.getElementById('lightboxImg').src = photos[index].src;
+            document.getElementById('lightboxImg').alt = photos[index].alt;
+            document.getElementById('lightboxCaption').textContent = photos[index].caption;
+        }
+
+        function prevPhoto(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+            showPhoto(currentIndex);
+        }
+
+        function nextPhoto(e) {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % photos.length;
+            showPhoto(currentIndex);
+        }
+
+        function handleOverlayClick(e) {
+            if (e.target === document.getElementById('lightbox')) closeLightbox();
+        }
+
+        document.addEventListener('keydown', e => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + photos.length) % photos.length; showPhoto(currentIndex); }
+            if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % photos.length; showPhoto(currentIndex); }
+        });
+    </script>
+</body>
+</html>

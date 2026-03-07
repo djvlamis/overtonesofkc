@@ -88,6 +88,10 @@
             border-left: 4px solid #1877F2;
         }
 
+        .youtube-card {
+            border-left: 4px solid #FF0000;
+        }
+
         .email-card {
             border-left: 4px solid #d4af37;
         }
@@ -309,7 +313,7 @@
     <header>
         <nav></nav>
     </header>
-    <script src="nav.js?v=3"></script>
+    <script src="nav.js?v=5"></script>
 
     <div class="page-header">
         <h1>Book The Overtones</h1>
@@ -334,11 +338,24 @@
                 </div>
 
                 <div class="info-card facebook-card">
-                    <div class="info-icon">👍</div>
+                    <div class="info-icon" style="display:flex; align-items:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1877F2" width="30" height="30"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.514c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+                    </div>
                     <div>
                         <h3>Facebook</h3>
                         <a href="https://facebook.com/OvertonesofKC" target="_blank" rel="noopener">facebook.com/OvertonesofKC</a>
                         <p class="sub">Follow us for upcoming events</p>
+                    </div>
+                </div>
+
+                <div class="info-card youtube-card">
+                    <div class="info-icon" style="display:flex; align-items:center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FF0000" width="30" height="30"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </div>
+                    <div>
+                        <h3>YouTube</h3>
+                        <a href="https://www.youtube.com/@OvertonesofKC" target="_blank" rel="noopener">youtube.com/@OvertonesofKC</a>
+                        <p class="sub">Watch performances &amp; leave a comment</p>
                     </div>
                 </div>
 
@@ -450,7 +467,7 @@
                     <p>Thanks for reaching out! We'll get back to you within 1–2 business days to discuss your event.</p>
                     <br>
                     <a href="music.html" class="cta-button" style="margin-right: 1rem;">Browse Our Music</a>
-                    <a href="index.html#calendar" class="cta-button" style="background: white; color: #1a1a2e; border: 2px solid #1a1a2e;">See Our Calendar</a>
+                    <a href="calendar.html" class="cta-button" style="background: white; color: #1a1a2e; border: 2px solid #1a1a2e;">See Our Calendar</a>
                 </div>
 
             </div>
@@ -458,7 +475,7 @@
     </div>
 
     <footer></footer>
-    <script src="footer.js?v=3"></script>
+    <script src="footer.js?v=5"></script>
 
     <script>
         async function handleSubmit(event) {

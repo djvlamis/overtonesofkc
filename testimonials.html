@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .testimonials-intro {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 3rem;
+        }
+
+        .testimonials-intro p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem 2rem 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #d4af37;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .quote-mark {
+            font-size: 4rem;
+            line-height: 1;
+            color: #d4af37;
+            font-family: Georgia, serif;
+            margin-bottom: 0.5rem;
+            opacity: 0.7;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.8;
+            font-style: italic;
+            flex: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-attribution {
+            border-top: 1px solid #f0e8c8;
+            padding-top: 1rem;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            color: #1a1a2e;
+            font-size: 1rem;
+        }
+
+        .testimonial-org {
+            color: #d4af37;
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Stars */
+        .stars {
+            color: #d4af37;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        /* CTA */
+        .testimonial-cta {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .testimonial-cta h2 {
+            color: #d4af37;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .testimonial-cta p {
+            color: #ccc;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* "Leave a testimonial" nudge */
+        .leave-review {
+            background: #fdf9ee;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .leave-review p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .leave-review strong {
+            color: #1a1a2e;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav></nav>
+    </header>
+    <script src="nav.js?v=5"></script>
+
+    <div class="page-header">
+        <h1>What People Are Saying</h1>
+        <p>Hear from the clients and audiences who've danced with us</p>
+    </div>
+
+    <div class="container">
+
+        <div class="testimonials-intro">
+            <p>From elegant wedding receptions to corporate galas and community events, The Overtones of Kansas City have been making crowds swing and smile since 1997. Here's what some of our clients have to say.</p>
+        </div>
+
+        <div class="testimonials-grid">
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <div class="quote-mark">&ldquo;</div>
+                <p class="testimonial-text">The band was my number ONE highlight of the evening&hellip;</p>
+                <div class="testimonial-attribution">
+                    <div class="testimonial-name">Julie G.</div>
+                    <div class="testimonial-org">Liberty Hospital Foundation</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <div class="quote-mark">&ldquo;</div>
+                <p class="testimonial-text">They had so much fun last night.</p>
+                <div class="testimonial-attribution">
+                    <div class="testimonial-name">Carrie T.</div>
+                    <div class="testimonial-org">The Atriums Senior Living</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <div class="quote-mark">&ldquo;</div>
+                <p class="testimonial-text">We'd love to have you back again&hellip;!</p>
+                <div class="testimonial-attribution">
+                    <div class="testimonial-name">Nicolle D.</div>
+                    <div class="testimonial-org">First UMC of Kearney</div>
+                </div>
+            </div>
+
+            <!-- ADD NEW TESTIMONIALS HERE
+                 Copy one of the cards above and paste it below this comment.
+                 Replace the text, name, and organization.
+            -->
+
+        </div>
+
+        <!-- Nudge for future testimonials -->
+        <div class="leave-review">
+            <p><strong>Did The Overtones perform at your event?</strong></p>
+            <p>We'd love to hear from you! Send your testimonial to <a href="mailto:overtonesofkc@gmail.com" style="color:#d4af37;font-weight:600;">overtonesofkc@gmail.com</a> and we'll add it to this page.</p>
+        </div>
+
+        <div class="testimonial-cta">
+            <h2>Ready to Create Your Own Story?</h2>
+            <p>Book The Overtones of Kansas City for your next wedding, corporate event, or special occasion.</p>
+            <a href="contact.html" class="cta-button">Book Us For Your Event</a>
+        </div>
+
+    </div>
+
+    <footer></footer>
+    <script src="footer.js?v=5"></script>
+
+</body>
+</html>

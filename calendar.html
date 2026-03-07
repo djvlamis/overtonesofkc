@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav></nav>
+    </header>
+    <script src="nav.js?v=4"></script>
+
+    <div class="page-header">
+        <h1>Upcoming Performances</h1>
+        <p>Come swing with us at our next event!</p>
+    </div>
+
+    <div class="container">
+
+        <!-- Google Calendar Embed: Public Calendar from overtonesofkc@gmail.com -->
+        <!-- Shows Public Calendar only (gigs). Rehearsals calendar is separate and not embedded. -->
+        <div class="calendar-container">
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&showTabs=1&showNav=1&showTitle=0&mode=MONTH&src=ZThkOTM2OGM3ZDk5MjE5MjEyNmE5MDAyMmNhZjY5NDRhNjJlYjZiNzQ1YzRlMGUyYWMyYmEwYjg4MGZiNmUyZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5"
+                    style="border: 0"
+                    width="100%"
+                    height="650"
+                    frameborder="0"
+                    scrolling="no">
+            </iframe>
+        </div>
+
+        <!-- Alternative: Manual gig list if calendar embed doesn't work -->
+        <div class="gig-list" style="display:none;">
+            <div class="gig-card">
+                <div class="gig-date">Saturday, February 15, 2026 • 7:00 PM</div>
+                <div class="gig-venue">Riverstone Retirement Community</div>
+                <div class="gig-location">Kansas City, MO</div>
+            </div>
+        </div>
+
+        <div class="join-cta" style="margin-top: 2rem;">
+            <h2>Interested in Booking The Overtones?</h2>
+            <p>We'd love to make your next event swing!</p>
+            <a href="contact.html" class="cta-button" style="display:inline-block; margin-top: 1rem;">Contact Us</a>
+        </div>
+
+    </div>
+
+    <footer></footer>
+    <script src="footer.js?v=4"></script>
+</body>
+</html>

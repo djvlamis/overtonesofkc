@@ -1,0 +1,11 @@
+# Large media files — host on YouTube/Google Drive instead of GitHub
+media/*.mp4
+media/*.mov
+media/*.avi
+media/*.mkv
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db

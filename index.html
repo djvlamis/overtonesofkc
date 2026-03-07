@@ -10,7 +10,7 @@
     <header>
         <nav></nav>
     </header>
-    <script src="nav.js?v=3"></script>
+    <script src="nav.js?v=5"></script>
 
     <section class="hero" id="home">
         <div class="hero-content">
@@ -31,36 +31,37 @@
                 <p>We've performed for weddings, anniversaries, birthdays, city festivals, corporate dinners, fund raisers and veteran appreciation events. We can tailor our performance to fit your entertainment needs.</p>
                 
                 <p><strong>Regardless of your age or musical tastes, you will LOVE the OVERTONES!</strong></p>
-            </div>
-            <div class="about-image">
-                <img src="media/OvertonesNYE1.png" alt="The Overtones performing" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                <div class="placeholder-image" style="display:none;">[Add Band Photo Here]</div>
-            </div>
-        </div>
-    </section>
 
-    <section class="section gigs" id="calendar">
-        <h2>Upcoming Performances</h2>
-        <p class="section-intro">Come swing with us at our next event!</p>
-        
-        <!-- Google Calendar Embed: Public Calendar from overtonesofkc@gmail.com -->
-        <!-- Shows Public Calendar only (gigs). Rehearsals calendar is separate and not embedded. -->
-        <div class="calendar-container">
-            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FChicago&showPrint=0&showTabs=1&showNav=1&showTitle=0&mode=MONTH&src=ZThkOTM2OGM3ZDk5MjE5MjEyNmE5MDAyMmNhZjY5NDRhNjJlYjZiNzQ1YzRlMGUyYWMyYmEwYjg4MGZiNmUyZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5"
-                    style="border: 0"
-                    width="100%"
-                    height="600"
-                    frameborder="0"
-                    scrolling="no">
-            </iframe>
-        </div>
-        
-        <!-- Alternative: Manual gig list if calendar embed doesn't work -->
-        <div class="gig-list" style="display:none;">
-            <div class="gig-card">
-                <div class="gig-date">Saturday, February 15, 2026 • 7:00 PM</div>
-                <div class="gig-venue">Riverstone Retirement Community</div>
-                <div class="gig-location">Kansas City, MO</div>
+                <!-- Social media & flyer links -->
+                <div class="about-links">
+                    <a href="https://facebook.com/OvertonesofKC" target="_blank" rel="noopener" class="about-link about-link--facebook">
+                        <svg class="about-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.514c-1.491 0-1.956.93-1.956 1.884v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+                        Follow us on Facebook
+                    </a>
+                    <a href="https://www.youtube.com/@OvertonesofKC" target="_blank" rel="noopener" class="about-link about-link--youtube">
+                        <svg class="about-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        Watch us on YouTube
+                    </a>
+                    <a href="media/Overtones_Flyer1.pdf" target="_blank" class="about-link about-link--flyer">
+                        <svg class="about-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        Download Our Promotional Flyer
+                    </a>
+                </div>
+            </div>
+            <div class="about-image-col">
+                <div class="about-image">
+                    <img src="media/OvertonesNYE1.png" alt="The Overtones performing" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                    <div class="placeholder-image" style="display:none;">[Add Band Photo Here]</div>
+                </div>
+                <div class="about-video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/xaGT95vROG4?rel=0&modestbranding=1"
+                        title="The Overtones of Kansas City - Promotional Video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="about-video-label">Overtones Overview</div>
+                </div>
             </div>
         </div>
     </section>
@@ -103,7 +104,7 @@
     </section>
 
     <footer id="contact"></footer>
-    <script src="footer.js?v=3"></script>
+    <script src="footer.js?v=5"></script>
 
     <script>
         // Nav handled by nav.js
