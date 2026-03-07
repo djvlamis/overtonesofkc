@@ -156,6 +156,13 @@ Before deploying any changes:
 - [ ] Check for console errors
 - [ ] Test page load speed
 
+## Commit Message Policy
+Do NOT automatically provide a commit message and description after each change.
+Only draft the commit message and description when explicitly asked by the user
+(e.g. "draft the commit message" or "we're done, draft the commit").
+This is because changes often evolve during testing before they are ready to commit.
+When asked, the message and description should cover ALL changes made in the session.
+
 ## Git Workflow
 
 ### Initial Setup

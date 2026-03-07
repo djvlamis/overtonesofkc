@@ -43,7 +43,13 @@ Claude will:
 - If something needs adjustment, tell Claude in the same conversation
 
 ### 6. Commit to GitHub
-- Claude will provide a commit message and description referencing Pastel comment numbers
+- Do NOT draft commit messages automatically after each change
+- Only draft the commit message and description when explicitly asked
+  (e.g. "draft the commit message" or "we're done for today")
+- This is because changes often get modified during testing before
+  they are truly ready to commit
+- When asked, the commit message and description should cover ALL
+  changes made during the session, not just the last change
 - Commit and push using GitHub Desktop
 
 ### 7. Mark comments resolved in Pastel
