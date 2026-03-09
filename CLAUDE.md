@@ -142,6 +142,28 @@ Use **Slido** or **Mentimeter** for real-time setlist voting:
 4. Band director watches results live
 5. Cost: Free tier or $15/month
 
+## Local Testing
+
+### Running the Local Web Server
+Always test using the local Python web server, not by opening HTML files directly.
+Opening files directly (`file:///...`) breaks features that use `fetch` (like the song library).
+
+**To start the server:**
+1. Open a terminal / command prompt
+2. Run `runserver.cmd` from the project folder:
+   ```
+   cd C:\Projects\Overtones\overtonesofkc
+   runserver.cmd
+   ```
+3. Open your browser to `http://localhost:8000/index.html`
+
+`runserver.cmd` runs Python's built-in HTTP server (`python -m http.server 8000`).
+It was developed with Chris and lives inside the `overtonesofkc` project folder.
+
+To stop the server, press `Ctrl+C` in the terminal.
+
+---
+
 ## Testing Checklist
 
 Before deploying any changes:
