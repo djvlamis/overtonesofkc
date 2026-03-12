@@ -4,13 +4,29 @@
 You are helping build a website for The Overtones of Kansas City, a 16-piece big band. The site is hosted on GitHub Pages with a custom domain (overtonesofkc.com).
 
 ## Current Status
-- ✅ Homepage (index.html) - Complete with hero, about, calendar embed, features
-- ✅ Members page (musicians.html) - Band roster by section (no birthdays!)
-- ✅ Shared styles (styles.css) - Responsive design, navy/gold theme
-- ✅ Music library page (music.html) - Complete with search, filter, sort
-- ✅ Videos page (videos.html) - Auto-loads from YouTube playlist via API
-- ⏳ Photos page - Not started
-- ⏳ Contact form - Not started
+
+### All 9 HTML Pages (all include GA4 tag G-JWGTESSJHR)
+- ✅ index.html - Homepage with hero, about, promo video embed, features, booking CTA
+- ✅ musicians.html - Band roster by section (no birthdays, last names abbreviated)
+- ✅ music.html - Song library with search, filter by genre/vocal/era, sort
+- ✅ calendar.html - Google Calendar embed (public gigs calendar)
+- ✅ contact.html - Contact form (Formspree), phone/email/social info
+- ✅ photos.html - Photo gallery with lightbox viewer
+- ✅ testimonials.html - 3 testimonials from printed flyer
+- ✅ videos.html - YouTube playlist embed (auto-loads from playlist)
+- ✅ 404.html - Custom error page
+
+### Shared Files
+- ✅ styles.css - Responsive design, navy/gold theme
+- ✅ nav.js - Shared navigation (current version: v=5)
+- ✅ footer.js - Shared footer (current version: v=5)
+- ✅ overtones_library.json - 182-song repertoire data
+
+### Google Analytics
+- ✅ GA4 tag added to all 9 pages
+- Measurement ID: G-JWGTESSJHR
+- Account: OvertonesofKC (overtonesofkc@gmail.com)
+- UTM link library: not yet built (next step)
 
 ## Key Requirements
 
