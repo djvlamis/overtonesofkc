@@ -177,47 +177,38 @@
 
             <div class="photo-card" onclick="openLightbox(0)">
                 <img src="media/vlcsnap-2026-03-07-15h01m10s195.png" alt="Full band on stage with Overtones music stands">
-                <div class="photo-caption">Full band on stage — Overtones music stands front and center</div>
             </div>
 
             <div class="photo-card" onclick="openLightbox(1)">
                 <img src="media/vlcsnap-2026-03-07-15h00m51s625.png" alt="Aerial view of the full band performing in a decorated venue">
-                <div class="photo-caption">Bird's-eye view — full 16-piece ensemble filling the room</div>
             </div>
 
             <div class="photo-card" onclick="openLightbox(2)">
                 <img src="media/vlcsnap-2026-03-07-15h02m47s701.png" alt="Full band performing with trumpets standing">
-                <div class="photo-caption">Brass section standing for a feature number</div>
             </div>
 
             <div class="photo-card" onclick="openLightbox(3)">
                 <img src="media/vlcsnap-2026-03-07-15h05m31s203.png" alt="Band performing in white shirts at a community event">
-                <div class="photo-caption">Community performance — casual white-shirt show</div>
             </div>
 
             <div class="photo-card" onclick="openLightbox(4)">
                 <img src="media/vlcsnap-2026-03-07-15h04m43s807.png" alt="Bride and groom sharing their first dance">
-                <div class="photo-caption">First dance — the Overtones setting the perfect wedding mood</div>
             </div>
 
             <div class="photo-card" onclick="openLightbox(5)">
                 <img src="media/vlcsnap-2026-03-07-15h04m30s799.png" alt="Guests dancing at an event">
-                <div class="photo-caption">Getting everyone on the dance floor</div>
             </div>
 
             <div class="photo-card" onclick="openLightbox(6)">
                 <img src="media/vlcsnap-2026-03-07-15h00m30s286.png" alt="Band members in tuxedos posing outdoors before a performance">
-                <div class="photo-caption">Ready to perform — band members dressed and in good spirits</div>
             </div>
 
             <div class="photo-card" onclick="openLightbox(7)">
                 <img src="media/OvertonesNYE1.png" alt="The Overtones performing at a New Year's Eve event">
-                <div class="photo-caption">New Year's Eve performance</div>
             </div>
 
             <div class="photo-card" onclick="openLightbox(8)">
                 <img src="media/Overtones_DanV.png" alt="Dan Vlamis performing on trombone">
-                <div class="photo-caption">Dan Vlamis on trombone</div>
             </div>
 
         </div>
@@ -248,7 +239,7 @@
         const photos = Array.from(document.querySelectorAll('.photo-card')).map(card => ({
             src: card.querySelector('img').src,
             alt: card.querySelector('img').alt,
-            caption: card.querySelector('.photo-caption').textContent
+            caption: ''
         }));
 
         let currentIndex = 0;
