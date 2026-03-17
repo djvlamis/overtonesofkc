@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="footer-content">
             <div class="footer-section">
                 <h3>The Overtones of KC</h3>
-                <p>Kansas City's Premier Big Band</p>
+                <p>Kansas City's Big Band</p>
                 <p>Playing swing and dance music since 1997</p>
             </div>
             <div class="footer-section">

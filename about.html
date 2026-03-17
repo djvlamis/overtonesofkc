@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ABOUT PAGE SPECIFIC STYLES */
+
+        .about-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -60px; left: -60px;
+            width: 320px; height: 320px;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 175, 55, 0.08);
+        }
+
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; right: -80px;
+            width: 420px; height: 420px;
+            border-radius: 50%;
+            border: 2px solid rgba(212, 175, 55, 0.06);
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-hero .subtitle {
+            font-size: 1.25rem;
+            color: #d4af37;
+            font-weight: 300;
+        }
+
+        /* OVERTONES DEFINITION INSET */
+        .overtones-definition {
+            background: #1a1a2e;
+            color: white;
+            border-left: 4px solid #d4af37;
+            border-radius: 0 8px 8px 0;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem 0;
+            position: relative;
+        }
+
+        .overtones-definition .quote-mark {
+            font-size: 5rem;
+            line-height: 1;
+            color: #d4af37;
+            opacity: 0.35;
+            font-family: Georgia, serif;
+            position: absolute;
+            top: 0.5rem;
+            left: 1.2rem;
+        }
+
+        .overtones-definition blockquote {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: #e8e8e8;
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .overtones-definition .definition-label {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #d4af37;
+            padding-left: 1.5rem;
+        }
+
+        /* MAIN CONTENT LAYOUT */
+        .about-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem;
+        }
+
+        .about-body h2 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .about-body h2:first-child {
+            margin-top: 0;
+        }
+
+        .about-body p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 1.2rem;
+        }
+
+        /* PLACEHOLDER HIGHLIGHT — visible cue for items to fill in */
+        .placeholder {
+            background: #fff3cd;
+            border: 1px dashed #d4af37;
+            border-radius: 4px;
+            padding: 0.15rem 0.5rem;
+            font-style: italic;
+            color: #7a5c00;
+            font-size: 0.95em;
+        }
+
+        /* KC JAZZ HERITAGE SECTION */
+        .kc-heritage {
+            background: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .kc-heritage h3 {
+            font-size: 1.4rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .kc-heritage p {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .kc-heritage p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            margin: 2rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .timeline li {
+            position: relative;
+            padding: 0.5rem 0 0.5rem 2.5rem;
+            border-left: 2px solid #d4af37;
+            margin-left: 1rem;
+        }
+
+        .timeline li::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 1rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d4af37;
+        }
+
+        .timeline .year {
+            font-weight: 700;
+            color: #d4af37;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline .event {
+            color: #444;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* CHURCH LINK */
+        .church-link {
+            color: #1a1a2e;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .church-link:hover {
+            color: #d4af37;
+        }
+
+        /* LIVE MUSIC CALLOUT */
+        .live-music-callout {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .live-music-callout h3 {
+            color: #d4af37;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .live-music-callout p {
+            color: #ccc;
+            line-height: 1.85;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .live-music-callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* JOIN US CALLOUT */
+        .join-us-callout {
+            background: #f8f8f8;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .join-us-callout h3 {
+            font-size: 1.4rem;
+            color: #1a1a2e;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .join-us-callout p {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: #555;
+            margin-bottom: 0.75rem;
+        }
+
+        .join-us-callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        .open-positions {
+            margin: 0.75rem 0 1rem 1.2rem;
+            padding: 0;
+            list-style: disc;
+            color: #444;
+        }
+
+        .open-positions li {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 0.25rem;
+        }
+
+        /* NOTE FOR EDITOR */
+        .editor-note {
+            background: #e8f4fd;
+            border: 1px solid #90cdf4;
+            border-radius: 6px;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: #2c5282;
+        }
+
+        .editor-note strong {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* CTA */
+        .about-cta {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .about-cta p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .overtones-definition {
+                padding: 1.5rem;
+            }
+
+            .kc-heritage {
+                padding: 1.5rem;
+            }
+
+            .live-music-callout {
+                padding: 1.5rem;
+            }
+
+            .join-us-callout {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav></nav>
+    </header>
+
+    <div class="about-hero">
+        <h1>About The Overtones</h1>
+        <p class="subtitle">Kansas City's big band since 1997</p>
+    </div>
+
+    <div class="about-body">
+
+        <!-- LIVE MUSIC vs RECORDED — leads the page -->
+        <div class="live-music-callout">
+            <h3>Why Live Music Makes the Difference</h3>
+            <p>
+                A playlist can fill a room with sound. A live big band fills a room with energy.
+                There's something that happens when sixteen musicians lock into a groove together —
+                a shared momentum that a recording simply can't replicate. You feel it in your chest
+                before you hear it with your ears.
+            </p>
+            <p>
+                At a wedding, it's the moment the dance floor fills. At a corporate gala, it's when
+                the room stops networking and starts listening. At a festival, it's when strangers
+                start dancing next to each other. Live music creates shared moments. That's what
+                we've been doing since 1997 — and it's what we love about this.
+            </p>
+        </div>
+
+        <!-- HISTORY -->
+        <h2>Our Story</h2>
+
+        <p>
+            The Overtones of Kansas City formed in 1997, when a group of musicians in the
+            Kansas City Northland came together with one shared goal: bring the joy of big band
+            music to the Kansas City area. The band was founded by
+            <span class="placeholder">[founding story — ask Catherine]</span>,
+            with founding members including Catherine Bohm, John Byrne, Mary Byrne, and Sheree Shilt.
+        </p>
+
+        <p>
+            From the beginning, the band found a home at
+            <a href="https://kearneyfumc.org/" class="church-link" target="_blank">First United Methodist Church</a>
+            in Kearney, Missouri — where the Overtones still rehearse today.
+            <span class="placeholder">[Any details about the church connection worth noting? — ask Catherine]</span>
+        </p>
+
+        <p>
+            Over the years, players have come and gone, but the passion for the music has remained constant.
+            For many years, <strong>Jim Leuschke</strong> served as Music Director, building the band's
+            repertoire and shaping its sound. He passed the baton to <strong>Larry Fitzpatrick</strong>,
+            who leads the band today. The library has grown to include more than 180 songs —
+            spanning everything from Glenn Miller swing to Earth, Wind &amp; Fire — while the core
+            commitment to great live music has never wavered.
+        </p>
+
+        <p>
+            <span class="placeholder">[Additional history from Catherine — early gigs, memorable moments, how the band grew, etc.]</span>
+        </p>
+
+        <p>
+            Then came COVID-19. Like live music everywhere, the Overtones went silent from 2020
+            through most of 2023 — no rehearsals, no gigs, no packed dance floors. It was a
+            difficult stretch for any performing ensemble, and the band was no exception.
+            <span class="placeholder">[Any details about how the band stayed connected during COVID? — ask Catherine or Larry]</span>
+        </p>
+
+        <p>
+            But the hiatus also brought opportunity. When the band came back together, it did so
+            with fresh energy and several talented new players joining the roster. New voices, new
+            charts added to the library, and new venues opened their doors to the sound of the
+            Overtones. The return to the stage felt less like picking up where things left off and
+            more like a second beginning.
+        </p>
+
+        <ul class="timeline">
+            <li>
+                <div class="year">1997</div>
+                <div class="event">Band founded in Kearney, MO</div>
+            </li>
+            <li>
+                <div class="year"><span class="placeholder">Year?</span></div>
+                <div class="event"><span class="placeholder">[Key milestone — ask Catherine]</span></div>
+            </li>
+            <li>
+                <div class="year">2020–2023</div>
+                <div class="event">COVID-19 pause — live performances suspended along with the rest of the live music world</div>
+            </li>
+            <li>
+                <div class="year">2023–2024</div>
+                <div class="event">Return to the stage with new players, new charts, and new venues</div>
+            </li>
+            <li>
+                <div class="year">Today</div>
+                <div class="event">16 musicians, 180+ songs, performing across the Kansas City area</div>
+            </li>
+        </ul>
+
+        <!-- KC JAZZ HERITAGE -->
+        <div class="kc-heritage">
+            <h3>🎷 Carrying on a Kansas City Tradition</h3>
+            <p>
+                Kansas City has always been a jazz town. In the 1930s and '40s, KC was one of the
+                hotbeds of American jazz — a place where Count Basie developed his signature
+                swing style, and where bandleader Jay McShann gave a young Charlie Parker his first
+                real break. The legendary 12th &amp; Vine district pulsed with the sound of big bands
+                night after night.
+            </p>
+            <p>
+                That tradition runs deep. The Overtones of Kansas City see themselves as part of
+                that lineage — sixteen musicians keeping the big band sound alive and bringing it
+                to new audiences, new venues, and new generations.
+            </p>
+        </div>
+
+        <!-- WHAT WE DO TODAY -->
+        <h2>The Band Today</h2>
+
+        <p>
+            The Overtones of Kansas City is a 16-piece ensemble featuring five saxophones,
+            six trombones, four trumpets, and a rhythm section of piano, bass, and drums.
+            <span class="placeholder">[Anything worth adding about the current band's character or personality? — ask Larry or Catherine]</span>
+        </p>
+
+        <p>
+            We've performed for weddings, anniversaries, city festivals, corporate dinners,
+            fundraisers, and veteran appreciation events. Whether your guests want to dance
+            all night or simply enjoy the music, we can tailor the performance to the moment.
+        </p>
+
+        <p>
+            <strong>Regardless of your age or musical tastes — if you like big band at all,
+            you will love The Overtones.</strong>
+        </p>
+
+        <!-- JOIN US -->
+        <div class="join-us-callout">
+            <h3>🎺 Join the Band</h3>
+            <p>
+                The Overtones are always looking for talented musicians to join the ensemble.
+                Whether you're interested in a permanent chair or just want to sit in for a
+                rehearsal to see if we're a good fit, you're welcome to come and play.
+            </p>
+            <p><strong>Current open positions:</strong></p>
+            <ul class="open-positions">
+                <li>Trombone</li>
+                <li>Tenor Saxophone</li>
+                <li>Vocalist (for select charts)</li>
+            </ul>
+            <p>
+                Contact <strong>Larry Fitzpatrick</strong>, Music Director, at
+                <a href="mailto:overtonesofkc@gmail.com" style="color:#1a1a2e; font-weight:600; text-decoration:underline;">overtonesofkc@gmail.com</a>
+                for details.
+            </p>
+        </div>
+
+        <!-- WHAT IS AN OVERTONE? — near the end, as a curiosity -->
+        <div class="overtones-definition">
+            <span class="quote-mark">"</span>
+            <blockquote>
+                Every musical note is more than a single pitch. When a player sounds a note,
+                the vibrating air column produces a cascade of higher frequencies above it —
+                called overtones.
+            </blockquote>
+            <p class="definition-label">On the name "The Overtones"</p>
+        </div>
+
+        <!-- EDITOR NOTE -->
+        <div class="editor-note">
+            <strong>📝 Note for Catherine &amp; Larry:</strong>
+            Items marked in yellow are placeholders waiting for your input — founding story details,
+            key milestones, years, and any color you'd like to add. Everything else is ready to go.
+            Just reply with the missing pieces and Dan will fill them in.
+        </div>
+
+        <!-- CTA -->
+        <div class="about-cta">
+            <p>Ready to bring the Overtones to your next event?</p>
+            <a href="contact.html" class="cta-button">Get In Touch</a>
+        </div>
+
+    </div>
+
+    <footer></footer>
+
+    <script src="nav.js?v=5"></script>
+    <script src="footer.js?v=5"></script>
+
+</body>
+</html>
