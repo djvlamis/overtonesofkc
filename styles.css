@@ -91,6 +91,15 @@ nav {
     font-weight: 300;
 }
 
+.hero-logo {
+    display: block;
+    max-width: 560px;
+    width: 90%;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    filter: drop-shadow(2px 3px 6px rgba(0,0,0,0.6));
+}
+
 .cta-button {
     background: #d4af37;
     color: #1a1a2e;
