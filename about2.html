@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About (Layout Experiment) - The Overtones of Kansas City</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ── LAYOUT SWITCHER BAR ────────────────────────────────────── */
+        .switcher-bar {
+            background: #fff3cd;
+            border-bottom: 2px solid #d4af37;
+            padding: 0.75rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: #5a3e00;
+            position: sticky;
+            top: 64px;   /* below the nav */
+            z-index: 900;
+        }
+
+        .switcher-bar strong {
+            margin-right: 0.5rem;
+        }
+
+        .switcher-btn {
+            padding: 0.35rem 1rem;
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            background: white;
+            color: #5a3e00;
+            font-size: 0.85rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .switcher-btn:hover {
+            background: #fef3c7;
+        }
+
+        .switcher-btn.active {
+            background: #d4af37;
+            color: #1a1a2e;
+            font-weight: 700;
+        }
+
+        .switcher-note {
+            font-size: 0.8rem;
+            color: #7a5c00;
+            font-style: italic;
+        }
+
+        /* ── ABOUT HERO ─────────────────────────────────────────────── */
+        .about-hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-hero .subtitle {
+            font-size: 1.25rem;
+            color: #d4af37;
+            font-weight: 300;
+        }
+
+        /* ── SHARED BODY WRAPPER ────────────────────────────────────── */
+        .about-body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3.5rem 2rem;
+        }
+
+        .about-body h2 {
+            font-size: 2rem;
+            color: #1a1a2e;
+            margin-bottom: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .about-body h2:first-child { margin-top: 0; }
+
+        .about-body p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 1.2rem;
+        }
+
+        /* ── LAYOUT B — right sidebar ─────────────────────────────── */
+        .layout-b .about-body {
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            column-gap: 3rem;
+            align-items: start;
+        }
+
+        .layout-b .main-col {
+            grid-column: 1;
+        }
+
+        .layout-b .right-sidebar {
+            grid-column: 2;
+            grid-row: 1 / -1;
+            position: sticky;
+            top: 130px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* ── LAYOUT C — left sidebar ──────────────────────────────── */
+        .layout-c .about-body {
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            column-gap: 3rem;
+            align-items: start;
+        }
+
+        .layout-c .left-sidebar {
+            grid-column: 1;
+            grid-row: 1 / -1;
+            position: sticky;
+            top: 130px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .layout-c .main-col {
+            grid-column: 2;
+        }
+
+        /* ── SIDEBAR CARD STYLES ────────────────────────────────────── */
+        .sidebar-card {
+            border-radius: 10px;
+            padding: 1.5rem;
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .sidebar-card p {
+            font-size: 0.92rem !important;
+            line-height: 1.75 !important;
+            margin-bottom: 0.6rem !important;
+        }
+
+        .sidebar-card p:last-child { margin-bottom: 0 !important; }
+
+        .sidebar-dark {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+
+        .sidebar-dark h3 { color: #d4af37; }
+        .sidebar-dark p  { color: #ccc; }
+
+        .sidebar-light {
+            background: #f8f8f8;
+            border: 1px solid #e0e0e0;
+        }
+
+        .sidebar-light h3 { color: #1a1a2e; }
+        .sidebar-light p  { color: #555; }
+
+        /* ── SHARED SECTION COMPONENTS ──────────────────────────────── */
+        .live-music-callout {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .live-music-callout h3 { color: #d4af37; font-size: 1.4rem; margin-bottom: 1rem; }
+        .live-music-callout p  { color: #ccc; line-height: 1.85; margin-bottom: 0.75rem; font-size: 1rem; }
+        .live-music-callout p:last-child { margin-bottom: 0; }
+
+        .kc-heritage {
+            background: #f8f8f8;
+            border-radius: 10px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .kc-heritage h3 { font-size: 1.4rem; color: #1a1a2e; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem; }
+        .kc-heritage p  { font-size: 1rem; line-height: 1.85; color: #555; margin-bottom: 1rem; }
+        .kc-heritage p:last-child { margin-bottom: 0; }
+
+        .join-us-callout {
+            background: #f8f8f8;
+            border: 2px solid #d4af37;
+            border-radius: 10px;
+            padding: 2rem 2.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .join-us-callout h3 { font-size: 1.4rem; color: #1a1a2e; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem; }
+        .join-us-callout p  { font-size: 1rem; line-height: 1.85; color: #555; margin-bottom: 0.75rem; }
+        .join-us-callout p:last-child { margin-bottom: 0; }
+
+        .open-positions {
+            margin: 0.75rem 0 1rem 1.2rem;
+            padding: 0;
+            list-style: disc;
+            color: #444;
+        }
+
+        .open-positions li { font-size: 1rem; line-height: 1.7; margin-bottom: 0.25rem; }
+
+        /* Timeline */
+        .timeline { margin: 2rem 0; padding-left: 0; list-style: none; }
+        .timeline li { position: relative; padding: 0.5rem 0 0.5rem 2.5rem; border-left: 2px solid #d4af37; margin-left: 1rem; }
+        .timeline li::before { content: ''; position: absolute; left: -6px; top: 1rem; width: 10px; height: 10px; border-radius: 50%; background: #d4af37; }
+        .timeline .year  { font-weight: 700; color: #d4af37; font-size: 0.9rem; letter-spacing: 0.05em; }
+        .timeline .event { color: #444; font-size: 1rem; line-height: 1.6; }
+
+        /* Church link */
+        .church-link { color: #1a1a2e; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+        .church-link:hover { color: #d4af37; }
+
+        /* CTA */
+        .about-cta { text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e0e0e0; }
+        .about-cta p { font-size: 1.1rem; color: #555; margin-bottom: 1.5rem; }
+
+        /* ── RESPONSIVE ─────────────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .layout-b .about-body,
+            .layout-c .about-body {
+                display: block;
+                max-width: 800px;
+            }
+
+            .layout-b .right-sidebar,
+            .layout-c .left-sidebar {
+                position: static;
+            }
+
+            .about-hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header><nav></nav></header>
+
+    <!-- LAYOUT SWITCHER -->
+    <div class="switcher-bar">
+        <strong>Layout experiment:</strong>
+        <button class="switcher-btn active" onclick="setLayout('a')" id="btn-a">A — Original (stacked)</button>
+        <button class="switcher-btn" onclick="setLayout('b')" id="btn-b">B — Right sidebar</button>
+        <button class="switcher-btn" onclick="setLayout('c')" id="btn-c">C — Left sidebar</button>
+        <span class="switcher-note">This file is not linked from the menu — for review only.</span>
+    </div>
+
+    <div class="about-hero">
+        <h1>About The Overtones</h1>
+        <p class="subtitle">Kansas City's big band since 1997</p>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         LAYOUT A — Original stacked layout (default)
+    ══════════════════════════════════════════════════════════════ -->
+    <div id="layout-a" class="layout-a">
+        <div class="about-body">
+
+            <div class="live-music-callout">
+                <h3>On the Name "The Overtones"</h3>
+                <p>Every musical note is more than a single pitch. When a player sounds a note,
+                the vibrating air column produces a cascade of higher frequencies above it —
+                called overtones. Those overtones give brass instruments their characteristic
+                sound. Saxophone players shape the same harmonic energy through the reed and
+                body of the horn.</p>
+            </div>
+
+            <h2>Our Story</h2>
+
+            <p>The Overtones of Kansas City formed in 1997, when <strong>Sheree Shilt</strong>
+            inherited her father's huge library of big band music and started a small combo
+            including John Byrne, Mary Ring, and Sheree Shilt, for the
+            <a href="https://kearneyfumc.org/" class="church-link" target="_blank">First United Methodist Church</a>
+            in Kearney, Missouri. From that seed she assembled the musicians for a full traditional big band.</p>
+
+            <p>Over the years, players have come and gone, but the passion for the music has remained constant.
+            <strong>Larry Fitzpatrick</strong> leads the band today. The library has grown to include more
+            than 180 songs — spanning everything from Glenn Miller swing to Earth, Wind &amp; Fire.</p>
+
+            <p>Then came COVID-19. In the summer of 2020, Catherine asked if there was any way to keep
+            playing — and Jim came up with Kearney Park. The band entertained park participants outdoors
+            until it got too cold. In the spring of 2021, the band played its first real post-COVID gig:
+            an 80th birthday and 25th anniversary celebration.</p>
+
+            <ul class="timeline">
+                <li><div class="year">1997</div><div class="event">Band started as a combo for First United Methodist Church in Kearney, MO</div></li>
+                <li><div class="year">1998–2001</div><div class="event">Transformed into a big band with additional musicians</div></li>
+                <li><div class="year">2000s</div><div class="event">Performances at Metro North Mall, Smithville Park, Gladstone Festival, and Walmart</div></li>
+                <li><div class="year">2020</div><div class="event">COVID-19 pause, but continued playing outside at Kearney Park</div></li>
+                <li><div class="year">2021</div><div class="event">Return to the stage with an 80th birthday and 25th anniversary celebration</div></li>
+                <li><div class="year">TODAY</div><div class="event">Up to 16 musicians, 180+ songs, performing across the Kansas City area</div></li>
+            </ul>
+
+            <div class="kc-heritage">
+                <h3>🎷 Carrying on a Kansas City Tradition</h3>
+                <p>Kansas City has always been a jazz town. In the 1930s and '40s, KC was one of the
+                hotbeds of American jazz — a place where Count Basie developed his signature swing style,
+                and where bandleader Jay McShann gave a young Charlie Parker his first real break.</p>
+                <p>The Overtones of Kansas City see themselves as part of that lineage — sixteen musicians
+                keeping the big band sound alive and bringing it to new audiences, new venues, and new generations.</p>
+            </div>
+
+            <h2>The Band Today</h2>
+
+            <p>The Overtones consists of a full big band ensemble — saxophones, trumpets, trombones,
+            and a rhythm section of piano, bass, and drums.</p>
+
+            <p>We've performed for weddings, anniversaries, city festivals, corporate dinners, fundraisers,
+            and veteran appreciation events. We can tailor the performance to the moment by blending music
+            from jazz, swing, rock, blues, funk, Latin, pop, and patriotic songs.</p>
+
+            <p><strong>Regardless of your age or musical tastes — if you like big band music at all,
+            you will love The Overtones.</strong></p>
+
+            <div class="join-us-callout">
+                <h3>🎺 Join the Band</h3>
+                <p>The Overtones are always looking for talented musicians. Whether you want a permanent
+                chair or just want to sit in for a rehearsal, you're welcome to come and play.</p>
+                <p><strong>Current open positions:</strong></p>
+                <ul class="open-positions">
+                    <li>Trombone</li>
+                    <li>Tenor Saxophone</li>
+                    <li>Vocalist (for select charts)</li>
+                </ul>
+                <p>Contact <strong>Larry Fitzpatrick</strong> at
+                <a href="mailto:overtonesofkc@gmail.com" style="color:#1a1a2e;font-weight:600;text-decoration:underline;">overtonesofkc@gmail.com</a>.</p>
+            </div>
+
+            <div class="live-music-callout">
+                <h3>Why Live Music Makes the Difference</h3>
+                <p>A playlist can fill a room with sound. A live big band fills a room with energy.
+                There's something that happens when all the musicians lock into a groove together —
+                a shared momentum that a recording simply can't replicate.</p>
+                <p>At a wedding, it's the moment the dance floor fills. At a corporate gala, it's when
+                the room stops networking and starts listening. Live music creates shared moments.
+                That's what we've been doing since 1997.</p>
+            </div>
+
+            <div class="about-cta">
+                <p>Ready to bring the Overtones to your next event?</p>
+                <a href="contact.html" class="cta-button">Get In Touch</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         LAYOUT B — Right sidebar
+    ══════════════════════════════════════════════════════════════ -->
+    <div id="layout-b" class="layout-b" style="display:none;">
+        <div class="about-body">
+
+            <div class="right-sidebar">
+                <div class="sidebar-card sidebar-dark">
+                    <h3>Why Live Music Makes the Difference</h3>
+                    <p>A playlist can fill a room with sound. A live big band fills a room with energy.
+                    There's something that happens when all the musicians lock into a groove together —
+                    a shared momentum that a recording simply can't replicate.</p>
+                    <p>At a wedding, it's the moment the dance floor fills. At a corporate gala, it's when
+                    the room stops networking and starts listening. Live music creates shared moments.
+                    That's what we've been doing since 1997.</p>
+                </div>
+
+                <div class="sidebar-card sidebar-light">
+                    <h3>🎷 Carrying on a Kansas City Tradition</h3>
+                    <p>Kansas City has always been a jazz town. In the 1930s and '40s, KC was one of the
+                    hotbeds of American jazz — home to Count Basie and the club where Jay McShann gave a
+                    young Charlie Parker his first real break.</p>
+                    <p>The Overtones see themselves as part of that lineage — sixteen musicians keeping the
+                    big band sound alive and bringing it to new audiences and new generations.</p>
+                </div>
+            </div>
+
+            <div class="main-col">
+
+                <div class="live-music-callout">
+                    <h3>On the Name "The Overtones"</h3>
+                    <p>Every musical note is more than a single pitch. When a player sounds a note,
+                    the vibrating air column produces a cascade of higher frequencies above it —
+                    called overtones. Those overtones give brass instruments their characteristic sound.</p>
+                </div>
+
+                <h2>Our Story</h2>
+
+                <p>The Overtones of Kansas City formed in 1997, when <strong>Sheree Shilt</strong>
+                inherited her father's huge library of big band music and started a small combo
+                including John Byrne, Mary Ring, and Sheree Shilt, for the
+                <a href="https://kearneyfumc.org/" class="church-link" target="_blank">First United Methodist Church</a>
+                in Kearney, Missouri. From that seed she assembled the musicians for a full traditional big band.</p>
+
+                <p>Over the years, players have come and gone, but the passion for the music has remained constant.
+                <strong>Larry Fitzpatrick</strong> leads the band today. The library has grown to more than
+                180 songs — spanning everything from Glenn Miller swing to Earth, Wind &amp; Fire.</p>
+
+                <p>Then came COVID-19. In summer 2020, Catherine asked if there was any way to keep playing —
+                and Jim came up with Kearney Park. The band played outdoors until it got too cold. In spring
+                2021, the first real post-COVID gig: an 80th birthday and 25th anniversary celebration.</p>
+
+                <ul class="timeline">
+                    <li><div class="year">1997</div><div class="event">Band started as a combo for First United Methodist Church in Kearney, MO</div></li>
+                    <li><div class="year">1998–2001</div><div class="event">Transformed into a big band with additional musicians</div></li>
+                    <li><div class="year">2000s</div><div class="event">Performances at Metro North Mall, Smithville Park, Gladstone Festival, and Walmart</div></li>
+                    <li><div class="year">2020</div><div class="event">COVID-19 pause, but continued playing outside at Kearney Park</div></li>
+                    <li><div class="year">2021</div><div class="event">Return to stage with an 80th birthday and 25th anniversary celebration</div></li>
+                    <li><div class="year">TODAY</div><div class="event">Up to 16 musicians, 180+ songs, performing across the Kansas City area</div></li>
+                </ul>
+
+                <h2>The Band Today</h2>
+
+                <p>The Overtones consists of a full big band ensemble — saxophones, trumpets, trombones,
+                and a rhythm section of piano, bass, and drums.</p>
+
+                <p>We've performed for weddings, anniversaries, city festivals, corporate dinners, fundraisers,
+                and veteran appreciation events — tailoring the performance to the moment.</p>
+
+                <p><strong>Regardless of your age or musical tastes — if you like big band music at all,
+                you will love The Overtones.</strong></p>
+
+                <div class="join-us-callout">
+                    <h3>🎺 Join the Band</h3>
+                    <p>The Overtones are always looking for talented musicians. Whether you want a permanent
+                    chair or just want to sit in for a rehearsal, you're welcome to come and play.</p>
+                    <p><strong>Current open positions:</strong></p>
+                    <ul class="open-positions">
+                        <li>Trombone</li>
+                        <li>Tenor Saxophone</li>
+                        <li>Vocalist (for select charts)</li>
+                    </ul>
+                    <p>Contact <strong>Larry Fitzpatrick</strong> at
+                    <a href="mailto:overtonesofkc@gmail.com" style="color:#1a1a2e;font-weight:600;text-decoration:underline;">overtonesofkc@gmail.com</a>.</p>
+                </div>
+
+                <div class="about-cta">
+                    <p>Ready to bring the Overtones to your next event?</p>
+                    <a href="contact.html" class="cta-button">Get In Touch</a>
+                </div>
+
+            </div><!-- /main-col -->
+        </div><!-- /about-body -->
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         LAYOUT C — Left sidebar
+    ══════════════════════════════════════════════════════════════ -->
+    <div id="layout-c" class="layout-c" style="display:none;">
+        <div class="about-body">
+
+            <div class="left-sidebar">
+                <div class="sidebar-card sidebar-dark">
+                    <h3>Why Live Music Makes the Difference</h3>
+                    <p>A playlist can fill a room with sound. A live big band fills a room with energy.
+                    There's something that happens when all the musicians lock into a groove together —
+                    a shared momentum that a recording simply can't replicate.</p>
+                    <p>At a wedding, it's the moment the dance floor fills. At a corporate gala, it's when
+                    the room stops networking and starts listening. Live music creates shared moments.
+                    That's what we've been doing since 1997.</p>
+                </div>
+
+                <div class="sidebar-card sidebar-light">
+                    <h3>🎷 Carrying on a Kansas City Tradition</h3>
+                    <p>Kansas City has always been a jazz town. In the 1930s and '40s, KC was one of the
+                    hotbeds of American jazz — home to Count Basie and the club where Jay McShann gave a
+                    young Charlie Parker his first real break.</p>
+                    <p>The Overtones see themselves as part of that lineage — sixteen musicians keeping the
+                    big band sound alive and bringing it to new audiences and new generations.</p>
+                </div>
+            </div>
+
+            <div class="main-col">
+
+                <div class="live-music-callout">
+                    <h3>On the Name "The Overtones"</h3>
+                    <p>Every musical note is more than a single pitch. When a player sounds a note,
+                    the vibrating air column produces a cascade of higher frequencies above it —
+                    called overtones. Those overtones give brass instruments their characteristic sound.</p>
+                </div>
+
+                <h2>Our Story</h2>
+
+                <p>The Overtones of Kansas City formed in 1997, when <strong>Sheree Shilt</strong>
+                inherited her father's huge library of big band music and started a small combo
+                including John Byrne, Mary Ring, and Sheree Shilt, for the
+                <a href="https://kearneyfumc.org/" class="church-link" target="_blank">First United Methodist Church</a>
+                in Kearney, Missouri. From that seed she assembled the musicians for a full traditional big band.</p>
+
+                <p>Over the years, players have come and gone, but the passion for the music has remained constant.
+                <strong>Larry Fitzpatrick</strong> leads the band today. The library has grown to more than
+                180 songs — spanning everything from Glenn Miller swing to Earth, Wind &amp; Fire.</p>
+
+                <p>Then came COVID-19. In summer 2020, Catherine asked if there was any way to keep playing —
+                and Jim came up with Kearney Park. The band played outdoors until it got too cold. In spring
+                2021, the first real post-COVID gig: an 80th birthday and 25th anniversary celebration.</p>
+
+                <ul class="timeline">
+                    <li><div class="year">1997</div><div class="event">Band started as a combo for First United Methodist Church in Kearney, MO</div></li>
+                    <li><div class="year">1998–2001</div><div class="event">Transformed into a big band with additional musicians</div></li>
+                    <li><div class="year">2000s</div><div class="event">Performances at Metro North Mall, Smithville Park, Gladstone Festival, and Walmart</div></li>
+                    <li><div class="year">2020</div><div class="event">COVID-19 pause, but continued playing outside at Kearney Park</div></li>
+                    <li><div class="year">2021</div><div class="event">Return to stage with an 80th birthday and 25th anniversary celebration</div></li>
+                    <li><div class="year">TODAY</div><div class="event">Up to 16 musicians, 180+ songs, performing across the Kansas City area</div></li>
+                </ul>
+
+                <h2>The Band Today</h2>
+
+                <p>The Overtones consists of a full big band ensemble — saxophones, trumpets, trombones,
+                and a rhythm section of piano, bass, and drums.</p>
+
+                <p>We've performed for weddings, anniversaries, city festivals, corporate dinners, fundraisers,
+                and veteran appreciation events — tailoring the performance to the moment.</p>
+
+                <p><strong>Regardless of your age or musical tastes — if you like big band music at all,
+                you will love The Overtones.</strong></p>
+
+                <div class="join-us-callout">
+                    <h3>🎺 Join the Band</h3>
+                    <p>The Overtones are always looking for talented musicians. Whether you want a permanent
+                    chair or just want to sit in for a rehearsal, you're welcome to come and play.</p>
+                    <p><strong>Current open positions:</strong></p>
+                    <ul class="open-positions">
+                        <li>Trombone</li>
+                        <li>Tenor Saxophone</li>
+                        <li>Vocalist (for select charts)</li>
+                    </ul>
+                    <p>Contact <strong>Larry Fitzpatrick</strong> at
+                    <a href="mailto:overtonesofkc@gmail.com" style="color:#1a1a2e;font-weight:600;text-decoration:underline;">overtonesofkc@gmail.com</a>.</p>
+                </div>
+
+                <div class="about-cta">
+                    <p>Ready to bring the Overtones to your next event?</p>
+                    <a href="contact.html" class="cta-button">Get In Touch</a>
+                </div>
+
+            </div><!-- /main-col -->
+        </div><!-- /about-body -->
+    </div>
+
+    <footer></footer>
+
+    <script src="nav.js?v=5"></script>
+    <script src="footer.js?v=5"></script>
+
+    <script>
+        function setLayout(id) {
+            ['a','b','c'].forEach(function(l) {
+                document.getElementById('layout-' + l).style.display = (l === id) ? 'block' : 'none';
+                document.getElementById('btn-' + l).classList.toggle('active', l === id);
+            });
+            document.querySelector('.about-hero').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
