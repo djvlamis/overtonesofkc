@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="musicians.html">Musicians</a>
                 <a href="music.html">Music Repertoire</a>
                 <a href="videos.html">Videos</a>

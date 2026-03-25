@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const navLinks = [
         { href: 'index.html',         label: 'Home' },
+        { href: 'about.html',         label: 'About' },
         { href: 'musicians.html',     label: 'Musicians' },
         { href: 'music.html',         label: 'Music' },
         { href: 'videos.html',        label: 'Videos' },

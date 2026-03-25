@@ -90,6 +90,7 @@
         }
 
         .about-body h2:first-child { margin-top: 0; }
+        .main-col > *:first-child { margin-top: 0; }
 
         .about-body p {
             font-size: 1.05rem;
@@ -123,9 +124,9 @@
 
         /* ── LAYOUT C — left sidebar ──────────────────────────────── */
         .layout-c .about-body {
-            max-width: 1100px;
+            max-width: 1060px;
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 240px 1fr;
             column-gap: 3rem;
             align-items: start;
         }
@@ -133,8 +134,7 @@
         .layout-c .left-sidebar {
             grid-column: 1;
             grid-row: 1 / -1;
-            position: sticky;
-            top: 130px;
+            /* No sticky — both columns scroll together */
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
@@ -470,6 +470,15 @@
         <div class="about-body">
 
             <div class="left-sidebar">
+                <div class="sidebar-card sidebar-light">
+                    <h3>🎷 Carrying on a Kansas City Tradition</h3>
+                    <p>Kansas City has always been a jazz town. In the 1930s and '40s, KC was one of the
+                    hotbeds of American jazz — home to Count Basie and the club where Jay McShann gave a
+                    young Charlie Parker his first real break.</p>
+                    <p>The Overtones see themselves as part of that lineage — sixteen musicians keeping the
+                    big band sound alive and bringing it to new audiences and new generations.</p>
+                </div>
+
                 <div class="sidebar-card sidebar-dark">
                     <h3>Why Live Music Makes the Difference</h3>
                     <p>A playlist can fill a room with sound. A live big band fills a room with energy.
@@ -478,15 +487,6 @@
                     <p>At a wedding, it's the moment the dance floor fills. At a corporate gala, it's when
                     the room stops networking and starts listening. Live music creates shared moments.
                     That's what we've been doing since 1997.</p>
-                </div>
-
-                <div class="sidebar-card sidebar-light">
-                    <h3>🎷 Carrying on a Kansas City Tradition</h3>
-                    <p>Kansas City has always been a jazz town. In the 1930s and '40s, KC was one of the
-                    hotbeds of American jazz — home to Count Basie and the club where Jay McShann gave a
-                    young Charlie Parker his first real break.</p>
-                    <p>The Overtones see themselves as part of that lineage — sixteen musicians keeping the
-                    big band sound alive and bringing it to new audiences and new generations.</p>
                 </div>
             </div>
 
